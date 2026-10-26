@@ -1,0 +1,29 @@
+{
+  "cardio": {
+    "url": "https://raw.githubusercontent.com/Minqi824/ADBench/3dac8221081e190f157d78e93bfa8867f90d0965/adbench/datasets/Classical/6_cardio.npz",
+    "sha256": "bc5009bde6930b4d298b594f31b34485a9a17210cff0e8fb00a8c3068b885a2d",
+    "shape": [
+      1831,
+      21
+    ],
+    "anomalies": 176
+  },
+  "mammography": {
+    "url": "https://raw.githubusercontent.com/Minqi824/ADBench/3dac8221081e190f157d78e93bfa8867f90d0965/adbench/datasets/Classical/23_mammography.npz",
+    "sha256": "a0308ac9712d78321073b1c2dc98dc37665c0f35c1cc33019416fe8f8d7de7ea",
+    "shape": [
+      11183,
+      6
+    ],
+    "anomalies": 260
+  },
+  "annthyroid": {
+    "url": "https://raw.githubusercontent.com/Minqi824/ADBench/3dac8221081e190f157d78e93bfa8867f90d0965/adbench/datasets/Classical/2_annthyroid.npz",
+    "sha256": "e738f7c58a8740d2c4aac4c71ff49ce5e1d1aa16f44178135fc9c09df05fad1b",
+    "shape": [
+      7200,
+      6
+    ],
+    "anomalies": 534
+  }
+}

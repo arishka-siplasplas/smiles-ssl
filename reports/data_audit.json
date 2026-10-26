@@ -1,0 +1,824 @@
+{
+  "annthyroid": {
+    "protocol": "adbench-mixed-class-grouped-v1",
+    "summary": {
+      "train": {
+        "n": 4320,
+        "normal": 4000,
+        "anomaly": 320,
+        "fraction": 0.6,
+        "strata": {
+          "0": 4000,
+          "1": 320
+        }
+      },
+      "validation": {
+        "n": 1440,
+        "normal": 1333,
+        "anomaly": 107,
+        "fraction": 0.2,
+        "strata": {
+          "0": 1333,
+          "1": 107
+        }
+      },
+      "test": {
+        "n": 1440,
+        "normal": 1333,
+        "anomaly": 107,
+        "fraction": 0.2,
+        "strata": {
+          "0": 1333,
+          "1": 107
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "cardio": {
+    "protocol": "adbench-mixed-class-grouped-v1",
+    "summary": {
+      "train": {
+        "n": 1099,
+        "normal": 993,
+        "anomaly": 106,
+        "fraction": 0.600218459858001,
+        "strata": {
+          "0": 993,
+          "1": 106
+        }
+      },
+      "validation": {
+        "n": 366,
+        "normal": 331,
+        "anomaly": 35,
+        "fraction": 0.19989077007099945,
+        "strata": {
+          "0": 331,
+          "1": 35
+        }
+      },
+      "test": {
+        "n": 366,
+        "normal": 331,
+        "anomaly": 35,
+        "fraction": 0.19989077007099945,
+        "strata": {
+          "0": 331,
+          "1": 35
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "mammography": {
+    "protocol": "adbench-mixed-class-grouped-v1",
+    "summary": {
+      "train": {
+        "n": 6710,
+        "normal": 6551,
+        "anomaly": 159,
+        "fraction": 0.6000178842886524,
+        "strata": {
+          "0": 6551,
+          "1": 159
+        }
+      },
+      "validation": {
+        "n": 2237,
+        "normal": 2186,
+        "anomaly": 51,
+        "fraction": 0.20003576857730485,
+        "strata": {
+          "0": 2186,
+          "1": 51
+        }
+      },
+      "test": {
+        "n": 2236,
+        "normal": 2186,
+        "anomaly": 50,
+        "fraction": 0.19994634713404275,
+        "strata": {
+          "0": 2186,
+          "1": 50
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "bottle": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 175,
+        "normal": 137,
+        "anomaly": 38,
+        "fraction": 0.5993150684931506,
+        "strata": {
+          "good": 137,
+          "broken_large": 12,
+          "broken_small": 13,
+          "contamination": 13
+        }
+      },
+      "validation": {
+        "n": 59,
+        "normal": 46,
+        "anomaly": 13,
+        "fraction": 0.20205479452054795,
+        "strata": {
+          "good": 46,
+          "broken_large": 4,
+          "broken_small": 5,
+          "contamination": 4
+        }
+      },
+      "test": {
+        "n": 58,
+        "normal": 46,
+        "anomaly": 12,
+        "fraction": 0.19863013698630136,
+        "strata": {
+          "good": 46,
+          "broken_large": 4,
+          "broken_small": 4,
+          "contamination": 4
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "cable": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 224,
+        "normal": 169,
+        "anomaly": 55,
+        "fraction": 0.5989304812834224,
+        "strata": {
+          "good": 169,
+          "bent_wire": 8,
+          "cable_swap": 7,
+          "combined": 7,
+          "cut_inner_insulation": 8,
+          "cut_outer_insulation": 6,
+          "missing_cable": 7,
+          "missing_wire": 6,
+          "poke_insulation": 6
+        }
+      },
+      "validation": {
+        "n": 77,
+        "normal": 57,
+        "anomaly": 20,
+        "fraction": 0.20588235294117646,
+        "strata": {
+          "good": 57,
+          "bent_wire": 3,
+          "cable_swap": 3,
+          "combined": 2,
+          "cut_inner_insulation": 3,
+          "cut_outer_insulation": 2,
+          "missing_cable": 3,
+          "missing_wire": 2,
+          "poke_insulation": 2
+        }
+      },
+      "test": {
+        "n": 73,
+        "normal": 56,
+        "anomaly": 17,
+        "fraction": 0.19518716577540107,
+        "strata": {
+          "good": 56,
+          "bent_wire": 2,
+          "cable_swap": 2,
+          "combined": 2,
+          "cut_inner_insulation": 3,
+          "cut_outer_insulation": 2,
+          "missing_cable": 2,
+          "missing_wire": 2,
+          "poke_insulation": 2
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "capsule": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 211,
+        "normal": 145,
+        "anomaly": 66,
+        "fraction": 0.6011396011396012,
+        "strata": {
+          "good": 145,
+          "crack": 14,
+          "faulty_imprint": 13,
+          "poke": 13,
+          "scratch": 14,
+          "squeeze": 12
+        }
+      },
+      "validation": {
+        "n": 72,
+        "normal": 49,
+        "anomaly": 23,
+        "fraction": 0.20512820512820512,
+        "strata": {
+          "good": 49,
+          "crack": 5,
+          "faulty_imprint": 5,
+          "poke": 4,
+          "scratch": 5,
+          "squeeze": 4
+        }
+      },
+      "test": {
+        "n": 68,
+        "normal": 48,
+        "anomaly": 20,
+        "fraction": 0.19373219373219372,
+        "strata": {
+          "good": 48,
+          "crack": 4,
+          "faulty_imprint": 4,
+          "poke": 4,
+          "scratch": 4,
+          "squeeze": 4
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "carpet": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 237,
+        "normal": 185,
+        "anomaly": 52,
+        "fraction": 0.5969773299748111,
+        "strata": {
+          "good": 185,
+          "color": 11,
+          "cut": 10,
+          "hole": 10,
+          "metal_contamination": 10,
+          "thread": 11
+        }
+      },
+      "validation": {
+        "n": 82,
+        "normal": 62,
+        "anomaly": 20,
+        "fraction": 0.20654911838790932,
+        "strata": {
+          "good": 62,
+          "color": 4,
+          "cut": 4,
+          "hole": 4,
+          "metal_contamination": 4,
+          "thread": 4
+        }
+      },
+      "test": {
+        "n": 78,
+        "normal": 61,
+        "anomaly": 17,
+        "fraction": 0.1964735516372796,
+        "strata": {
+          "good": 61,
+          "color": 4,
+          "cut": 3,
+          "hole": 3,
+          "metal_contamination": 3,
+          "thread": 4
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "grid": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 206,
+        "normal": 171,
+        "anomaly": 35,
+        "fraction": 0.6023391812865497,
+        "strata": {
+          "good": 171,
+          "bent": 7,
+          "broken": 7,
+          "glue": 7,
+          "metal_contamination": 7,
+          "thread": 7
+        }
+      },
+      "validation": {
+        "n": 69,
+        "normal": 57,
+        "anomaly": 12,
+        "fraction": 0.20175438596491227,
+        "strata": {
+          "good": 57,
+          "bent": 3,
+          "broken": 3,
+          "glue": 2,
+          "metal_contamination": 2,
+          "thread": 2
+        }
+      },
+      "test": {
+        "n": 67,
+        "normal": 57,
+        "anomaly": 10,
+        "fraction": 0.195906432748538,
+        "strata": {
+          "good": 57,
+          "bent": 2,
+          "broken": 2,
+          "glue": 2,
+          "metal_contamination": 2,
+          "thread": 2
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "hazelnut": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 301,
+        "normal": 259,
+        "anomaly": 42,
+        "fraction": 0.6007984031936128,
+        "strata": {
+          "good": 259,
+          "crack": 11,
+          "cut": 10,
+          "hole": 11,
+          "print": 10
+        }
+      },
+      "validation": {
+        "n": 102,
+        "normal": 86,
+        "anomaly": 16,
+        "fraction": 0.20359281437125748,
+        "strata": {
+          "good": 86,
+          "crack": 4,
+          "cut": 4,
+          "hole": 4,
+          "print": 4
+        }
+      },
+      "test": {
+        "n": 98,
+        "normal": 86,
+        "anomaly": 12,
+        "fraction": 0.19560878243512975,
+        "strata": {
+          "good": 86,
+          "crack": 3,
+          "cut": 3,
+          "hole": 3,
+          "print": 3
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "leather": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 220,
+        "normal": 166,
+        "anomaly": 54,
+        "fraction": 0.5962059620596206,
+        "strata": {
+          "good": 166,
+          "color": 11,
+          "cut": 11,
+          "fold": 10,
+          "glue": 11,
+          "poke": 11
+        }
+      },
+      "validation": {
+        "n": 76,
+        "normal": 56,
+        "anomaly": 20,
+        "fraction": 0.20596205962059622,
+        "strata": {
+          "good": 56,
+          "color": 4,
+          "cut": 4,
+          "fold": 4,
+          "glue": 4,
+          "poke": 4
+        }
+      },
+      "test": {
+        "n": 73,
+        "normal": 55,
+        "anomaly": 18,
+        "fraction": 0.1978319783197832,
+        "strata": {
+          "good": 55,
+          "color": 4,
+          "cut": 4,
+          "fold": 3,
+          "glue": 4,
+          "poke": 3
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "metal_nut": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 201,
+        "normal": 145,
+        "anomaly": 56,
+        "fraction": 0.6,
+        "strata": {
+          "good": 145,
+          "bent": 15,
+          "color": 13,
+          "flip": 14,
+          "scratch": 14
+        }
+      },
+      "validation": {
+        "n": 69,
+        "normal": 49,
+        "anomaly": 20,
+        "fraction": 0.20597014925373133,
+        "strata": {
+          "good": 49,
+          "bent": 5,
+          "color": 5,
+          "flip": 5,
+          "scratch": 5
+        }
+      },
+      "test": {
+        "n": 65,
+        "normal": 48,
+        "anomaly": 17,
+        "fraction": 0.19402985074626866,
+        "strata": {
+          "good": 48,
+          "bent": 5,
+          "color": 4,
+          "flip": 4,
+          "scratch": 4
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "pill": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 260,
+        "normal": 176,
+        "anomaly": 84,
+        "fraction": 0.5990783410138248,
+        "strata": {
+          "good": 176,
+          "color": 15,
+          "combined": 10,
+          "contamination": 13,
+          "crack": 16,
+          "faulty_imprint": 11,
+          "pill_type": 5,
+          "scratch": 14
+        }
+      },
+      "validation": {
+        "n": 88,
+        "normal": 59,
+        "anomaly": 29,
+        "fraction": 0.20276497695852536,
+        "strata": {
+          "good": 59,
+          "color": 5,
+          "combined": 4,
+          "contamination": 4,
+          "crack": 5,
+          "faulty_imprint": 4,
+          "pill_type": 2,
+          "scratch": 5
+        }
+      },
+      "test": {
+        "n": 86,
+        "normal": 58,
+        "anomaly": 28,
+        "fraction": 0.19815668202764977,
+        "strata": {
+          "good": 58,
+          "color": 5,
+          "combined": 3,
+          "contamination": 4,
+          "crack": 5,
+          "faulty_imprint": 4,
+          "pill_type": 2,
+          "scratch": 5
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "screw": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 288,
+        "normal": 217,
+        "anomaly": 71,
+        "fraction": 0.6,
+        "strata": {
+          "good": 217,
+          "manipulated_front": 14,
+          "scratch_head": 14,
+          "scratch_neck": 15,
+          "thread_side": 14,
+          "thread_top": 14
+        }
+      },
+      "validation": {
+        "n": 97,
+        "normal": 72,
+        "anomaly": 25,
+        "fraction": 0.20208333333333334,
+        "strata": {
+          "good": 72,
+          "manipulated_front": 5,
+          "scratch_head": 5,
+          "scratch_neck": 5,
+          "thread_side": 5,
+          "thread_top": 5
+        }
+      },
+      "test": {
+        "n": 95,
+        "normal": 72,
+        "anomaly": 23,
+        "fraction": 0.19791666666666666,
+        "strata": {
+          "good": 72,
+          "manipulated_front": 5,
+          "scratch_head": 5,
+          "scratch_neck": 5,
+          "thread_side": 4,
+          "thread_top": 4
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "tile": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 209,
+        "normal": 158,
+        "anomaly": 51,
+        "fraction": 0.6023054755043228,
+        "strata": {
+          "good": 158,
+          "crack": 10,
+          "glue_strip": 11,
+          "gray_stroke": 10,
+          "oil": 11,
+          "rough": 9
+        }
+      },
+      "validation": {
+        "n": 71,
+        "normal": 53,
+        "anomaly": 18,
+        "fraction": 0.20461095100864554,
+        "strata": {
+          "good": 53,
+          "crack": 4,
+          "glue_strip": 4,
+          "gray_stroke": 3,
+          "oil": 4,
+          "rough": 3
+        }
+      },
+      "test": {
+        "n": 67,
+        "normal": 52,
+        "anomaly": 15,
+        "fraction": 0.1930835734870317,
+        "strata": {
+          "good": 52,
+          "crack": 3,
+          "glue_strip": 3,
+          "gray_stroke": 3,
+          "oil": 3,
+          "rough": 3
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "toothbrush": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 61,
+        "normal": 43,
+        "anomaly": 18,
+        "fraction": 0.5980392156862745,
+        "strata": {
+          "good": 43,
+          "defective": 18
+        }
+      },
+      "validation": {
+        "n": 21,
+        "normal": 15,
+        "anomaly": 6,
+        "fraction": 0.20588235294117646,
+        "strata": {
+          "good": 15,
+          "defective": 6
+        }
+      },
+      "test": {
+        "n": 20,
+        "normal": 14,
+        "anomaly": 6,
+        "fraction": 0.19607843137254902,
+        "strata": {
+          "good": 14,
+          "defective": 6
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "transistor": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 188,
+        "normal": 164,
+        "anomaly": 24,
+        "fraction": 0.6006389776357828,
+        "strata": {
+          "good": 164,
+          "bent_lead": 6,
+          "cut_lead": 6,
+          "damaged_case": 6,
+          "misplaced": 6
+        }
+      },
+      "validation": {
+        "n": 63,
+        "normal": 55,
+        "anomaly": 8,
+        "fraction": 0.2012779552715655,
+        "strata": {
+          "good": 55,
+          "bent_lead": 2,
+          "cut_lead": 2,
+          "damaged_case": 2,
+          "misplaced": 2
+        }
+      },
+      "test": {
+        "n": 62,
+        "normal": 54,
+        "anomaly": 8,
+        "fraction": 0.19808306709265175,
+        "strata": {
+          "good": 54,
+          "bent_lead": 2,
+          "cut_lead": 2,
+          "damaged_case": 2,
+          "misplaced": 2
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "wood": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 197,
+        "normal": 160,
+        "anomaly": 37,
+        "fraction": 0.6042944785276073,
+        "strata": {
+          "good": 160,
+          "color": 5,
+          "combined": 7,
+          "hole": 6,
+          "liquid": 6,
+          "scratch": 13
+        }
+      },
+      "validation": {
+        "n": 65,
+        "normal": 53,
+        "anomaly": 12,
+        "fraction": 0.19938650306748465,
+        "strata": {
+          "good": 53,
+          "color": 2,
+          "combined": 2,
+          "hole": 2,
+          "liquid": 2,
+          "scratch": 4
+        }
+      },
+      "test": {
+        "n": 64,
+        "normal": 53,
+        "anomaly": 11,
+        "fraction": 0.19631901840490798,
+        "strata": {
+          "good": 53,
+          "color": 1,
+          "combined": 2,
+          "hole": 2,
+          "liquid": 2,
+          "scratch": 4
+        }
+      }
+    },
+    "seed": 20261026
+  },
+  "zipper": {
+    "protocol": "mvtec-ad-MODIFIED-mixed-class-v1",
+    "summary": {
+      "train": {
+        "n": 235,
+        "normal": 163,
+        "anomaly": 72,
+        "fraction": 0.6010230179028133,
+        "strata": {
+          "good": 163,
+          "broken_teeth": 11,
+          "combined": 10,
+          "fabric_border": 10,
+          "fabric_interior": 10,
+          "rough": 10,
+          "split_teeth": 11,
+          "squeezed_teeth": 10
+        }
+      },
+      "validation": {
+        "n": 80,
+        "normal": 55,
+        "anomaly": 25,
+        "fraction": 0.20460358056265984,
+        "strata": {
+          "good": 55,
+          "broken_teeth": 4,
+          "combined": 3,
+          "fabric_border": 4,
+          "fabric_interior": 3,
+          "rough": 4,
+          "split_teeth": 4,
+          "squeezed_teeth": 3
+        }
+      },
+      "test": {
+        "n": 76,
+        "normal": 54,
+        "anomaly": 22,
+        "fraction": 0.19437340153452684,
+        "strata": {
+          "good": 54,
+          "broken_teeth": 4,
+          "combined": 3,
+          "fabric_border": 3,
+          "fabric_interior": 3,
+          "rough": 3,
+          "split_teeth": 3,
+          "squeezed_teeth": 3
+        }
+      }
+    },
+    "seed": 20261026
+  }
+}

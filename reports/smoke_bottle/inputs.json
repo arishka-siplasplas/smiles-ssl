@@ -1,0 +1,7 @@
+{
+  "bottle_mean_c91d4839bd": [
+    "runs/smoke_bottle/masked_reconstruction",
+    "runs/smoke_bottle/simclr",
+    "runs/smoke_bottle/vicreg"
+  ]
+}

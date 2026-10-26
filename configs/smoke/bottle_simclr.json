@@ -1,0 +1,45 @@
+{
+  "protocol_version": 1,
+  "stage": "smoke",
+  "modality": "image",
+  "dataset": "bottle",
+  "method": "simclr",
+  "seed": 9101,
+  "split_seed": 20261026,
+  "epochs": 1,
+  "checkpoints": [
+    0,
+    1
+  ],
+  "short_epoch": 0,
+  "batch_size": 16,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.0001,
+  "warmup_epochs": 0,
+  "image_size": 224,
+  "initialization": "random",
+  "num_workers": 0,
+  "threads": 1,
+  "augmentation": {
+    "family": "mean",
+    "fraction": 0.5,
+    "sigma": 0.0,
+    "patch_size": 16
+  },
+  "probe": {
+    "logreg_C": [
+      1.0
+    ],
+    "class_weights": [
+      null
+    ],
+    "logreg_max_iter": 10000,
+    "catboost_depth": [
+      2
+    ],
+    "catboost_l2": [
+      3.0
+    ],
+    "catboost_iterations": 10
+  }
+}

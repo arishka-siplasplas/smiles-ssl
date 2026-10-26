@@ -1,0 +1,368 @@
+{
+  "date": "2026-10-26",
+  "status": "technical_validation_only",
+  "full_experiments_started": false,
+  "datasets": {
+    "adbench": [
+      "cardio",
+      "mammography",
+      "annthyroid"
+    ],
+    "mvtec_categories": 15,
+    "mvtec_images": 5354,
+    "fixed_split_seed": 20261026,
+    "target_fractions": [
+      0.6,
+      0.2,
+      0.2
+    ],
+    "data_audit": "data_audit.json",
+    "mvtec_source": "pinned third-party mirror; official links returned HTTP 404"
+  },
+  "unit_and_integration_tests": {
+    "command": "PYTHONPATH=src:.deps ../.venv/bin/python -m pytest -q --junitxml=reports/tests.xml",
+    "result": "passed",
+    "includes": [
+      "all three methods in both modalities",
+      "split disjointness and duplicate grouping",
+      "source hash validation",
+      "train-only preprocessing",
+      "zero versus mean replacement",
+      "noise feature eligibility",
+      "donor exclusion of current row",
+      "patch corruptions",
+      "loss formulas and masked gradients",
+      "encoder initialization parity",
+      "spectral invariances and collapse",
+      "exact CPU resume",
+      "constant-feature probe fallback",
+      "archive traversal rejection"
+    ],
+    "tests": 24,
+    "failures": 0,
+    "errors": 0,
+    "seconds": 22.388
+  },
+  "real_data_smokes": [
+    {
+      "dataset": "cardio",
+      "method": "simclr",
+      "epochs": 2,
+      "seed": 9101,
+      "image_size": null,
+      "batch_size": 256,
+      "probe_grid": {
+        "logreg_C": [
+          0.1,
+          1.0,
+          10.0
+        ],
+        "class_weights": [
+          null
+        ],
+        "logreg_max_iter": 10000,
+        "catboost_depth": [
+          4
+        ],
+        "catboost_l2": [
+          3.0
+        ],
+        "catboost_iterations": 30
+      },
+      "completion": {
+        "stage": "smoke",
+        "epochs": 2,
+        "elapsed_seconds": 0.3970104589825496
+      },
+      "config": "../configs/smoke/cardio_simclr.json",
+      "source_snapshot_hashes": {
+        "metrics.py": "163fb615759b0a0924b078b6ce95853ddc3c0704ce08a8e37b0afb37b2193508",
+        "run.py": "4aef69adb3d362e483cdda46a38d3c31f622e1f232e04a8a1134d08b38c4a198",
+        "config.py": "a3dfbeb4f7dcdf8f9809aae806f53979eeae2b77e0bc3647f4c8249e7f5faa9b",
+        "models.py": "6f271d51bed59d6782df903dccaff272d02f60c4c499e8888013678ee05cf50a",
+        "download.py": "ce1b46dac17d89dfa47d2599f1615dad5c29ef9e991a2453f3b8ee774b52f0bd",
+        "io.py": "f20d05c9d6b195905ab2e451cf34ac7504dc50aeaf93fe7b4d1d5fd034ac3766",
+        "__init__.py": "e13c5aea1a4aebc0dc66ed6c3e39a3bff862db8408f9de73f7421a9d2a07cab5",
+        "augment.py": "1df2cbb475f5bffc4196ccec6e75bf3a6f95b11af5c98c4cf4ff6fbf5371567c",
+        "cli.py": "608447e84139e5691d29d774c81cf9f186314586a4abe0dd19055d4fbb40faed",
+        "probes.py": "78dfae4cc3729afc9b7c7039fb796c451dafbaf141bd58f31ccf74f3cd7a5cfa",
+        "data.py": "6996d8691853d8d95b63c6acbe6221104cbad130d743a27707bed1d572f46839",
+        "analyze.py": "eb798351a8b2994e48b2b27b7e1c9b22b35a55f04a4c92020a2e4c7b84ecec4c"
+      },
+      "all_checkpoints_have_two_probes": true
+    },
+    {
+      "dataset": "cardio",
+      "method": "vicreg",
+      "epochs": 2,
+      "seed": 9101,
+      "image_size": null,
+      "batch_size": 256,
+      "probe_grid": {
+        "logreg_C": [
+          0.1,
+          1.0,
+          10.0
+        ],
+        "class_weights": [
+          null
+        ],
+        "logreg_max_iter": 10000,
+        "catboost_depth": [
+          4
+        ],
+        "catboost_l2": [
+          3.0
+        ],
+        "catboost_iterations": 30
+      },
+      "completion": {
+        "stage": "smoke",
+        "epochs": 2,
+        "elapsed_seconds": 0.32488858298165724
+      },
+      "config": "../configs/smoke/cardio_vicreg.json",
+      "source_snapshot_hashes": {
+        "metrics.py": "163fb615759b0a0924b078b6ce95853ddc3c0704ce08a8e37b0afb37b2193508",
+        "run.py": "4aef69adb3d362e483cdda46a38d3c31f622e1f232e04a8a1134d08b38c4a198",
+        "config.py": "a3dfbeb4f7dcdf8f9809aae806f53979eeae2b77e0bc3647f4c8249e7f5faa9b",
+        "models.py": "6f271d51bed59d6782df903dccaff272d02f60c4c499e8888013678ee05cf50a",
+        "download.py": "ce1b46dac17d89dfa47d2599f1615dad5c29ef9e991a2453f3b8ee774b52f0bd",
+        "io.py": "f20d05c9d6b195905ab2e451cf34ac7504dc50aeaf93fe7b4d1d5fd034ac3766",
+        "__init__.py": "e13c5aea1a4aebc0dc66ed6c3e39a3bff862db8408f9de73f7421a9d2a07cab5",
+        "augment.py": "1df2cbb475f5bffc4196ccec6e75bf3a6f95b11af5c98c4cf4ff6fbf5371567c",
+        "cli.py": "608447e84139e5691d29d774c81cf9f186314586a4abe0dd19055d4fbb40faed",
+        "probes.py": "78dfae4cc3729afc9b7c7039fb796c451dafbaf141bd58f31ccf74f3cd7a5cfa",
+        "data.py": "6996d8691853d8d95b63c6acbe6221104cbad130d743a27707bed1d572f46839",
+        "analyze.py": "eb798351a8b2994e48b2b27b7e1c9b22b35a55f04a4c92020a2e4c7b84ecec4c"
+      },
+      "all_checkpoints_have_two_probes": true
+    },
+    {
+      "dataset": "cardio",
+      "method": "masked_reconstruction",
+      "epochs": 2,
+      "seed": 9101,
+      "image_size": null,
+      "batch_size": 256,
+      "probe_grid": {
+        "logreg_C": [
+          0.1,
+          1.0,
+          10.0
+        ],
+        "class_weights": [
+          null
+        ],
+        "logreg_max_iter": 10000,
+        "catboost_depth": [
+          4
+        ],
+        "catboost_l2": [
+          3.0
+        ],
+        "catboost_iterations": 30
+      },
+      "completion": {
+        "stage": "smoke",
+        "epochs": 2,
+        "elapsed_seconds": 0.3075417500222102
+      },
+      "config": "../configs/smoke/cardio_masked_reconstruction.json",
+      "source_snapshot_hashes": {
+        "metrics.py": "163fb615759b0a0924b078b6ce95853ddc3c0704ce08a8e37b0afb37b2193508",
+        "run.py": "4aef69adb3d362e483cdda46a38d3c31f622e1f232e04a8a1134d08b38c4a198",
+        "config.py": "a3dfbeb4f7dcdf8f9809aae806f53979eeae2b77e0bc3647f4c8249e7f5faa9b",
+        "models.py": "6f271d51bed59d6782df903dccaff272d02f60c4c499e8888013678ee05cf50a",
+        "download.py": "ce1b46dac17d89dfa47d2599f1615dad5c29ef9e991a2453f3b8ee774b52f0bd",
+        "io.py": "f20d05c9d6b195905ab2e451cf34ac7504dc50aeaf93fe7b4d1d5fd034ac3766",
+        "__init__.py": "e13c5aea1a4aebc0dc66ed6c3e39a3bff862db8408f9de73f7421a9d2a07cab5",
+        "augment.py": "1df2cbb475f5bffc4196ccec6e75bf3a6f95b11af5c98c4cf4ff6fbf5371567c",
+        "cli.py": "608447e84139e5691d29d774c81cf9f186314586a4abe0dd19055d4fbb40faed",
+        "probes.py": "78dfae4cc3729afc9b7c7039fb796c451dafbaf141bd58f31ccf74f3cd7a5cfa",
+        "data.py": "6996d8691853d8d95b63c6acbe6221104cbad130d743a27707bed1d572f46839",
+        "analyze.py": "eb798351a8b2994e48b2b27b7e1c9b22b35a55f04a4c92020a2e4c7b84ecec4c"
+      },
+      "all_checkpoints_have_two_probes": true
+    },
+    {
+      "dataset": "bottle",
+      "method": "simclr",
+      "epochs": 1,
+      "seed": 9101,
+      "image_size": 224,
+      "batch_size": 16,
+      "probe_grid": {
+        "logreg_C": [
+          1.0
+        ],
+        "class_weights": [
+          null
+        ],
+        "logreg_max_iter": 10000,
+        "catboost_depth": [
+          2
+        ],
+        "catboost_l2": [
+          3.0
+        ],
+        "catboost_iterations": 10
+      },
+      "completion": {
+        "stage": "smoke",
+        "epochs": 1,
+        "elapsed_seconds": 52.20532662502956
+      },
+      "config": "../configs/smoke/bottle_simclr.json",
+      "source_snapshot_hashes": {
+        "metrics.py": "163fb615759b0a0924b078b6ce95853ddc3c0704ce08a8e37b0afb37b2193508",
+        "run.py": "ca189722d04713ad521d7c714a5515e74b262d5c402ccdbfbea3986d2f4040b2",
+        "config.py": "a3dfbeb4f7dcdf8f9809aae806f53979eeae2b77e0bc3647f4c8249e7f5faa9b",
+        "models.py": "6f271d51bed59d6782df903dccaff272d02f60c4c499e8888013678ee05cf50a",
+        "download.py": "ce1b46dac17d89dfa47d2599f1615dad5c29ef9e991a2453f3b8ee774b52f0bd",
+        "io.py": "f20d05c9d6b195905ab2e451cf34ac7504dc50aeaf93fe7b4d1d5fd034ac3766",
+        "__init__.py": "e13c5aea1a4aebc0dc66ed6c3e39a3bff862db8408f9de73f7421a9d2a07cab5",
+        "augment.py": "1df2cbb475f5bffc4196ccec6e75bf3a6f95b11af5c98c4cf4ff6fbf5371567c",
+        "cli.py": "608447e84139e5691d29d774c81cf9f186314586a4abe0dd19055d4fbb40faed",
+        "probes.py": "78dfae4cc3729afc9b7c7039fb796c451dafbaf141bd58f31ccf74f3cd7a5cfa",
+        "data.py": "516dd6359888944c349872198835d7cd182a65d1178f3071b11139e836e57d90",
+        "analyze.py": "eb798351a8b2994e48b2b27b7e1c9b22b35a55f04a4c92020a2e4c7b84ecec4c"
+      },
+      "all_checkpoints_have_two_probes": true
+    },
+    {
+      "dataset": "bottle",
+      "method": "vicreg",
+      "epochs": 1,
+      "seed": 9101,
+      "image_size": 224,
+      "batch_size": 16,
+      "probe_grid": {
+        "logreg_C": [
+          1.0
+        ],
+        "class_weights": [
+          null
+        ],
+        "logreg_max_iter": 10000,
+        "catboost_depth": [
+          2
+        ],
+        "catboost_l2": [
+          3.0
+        ],
+        "catboost_iterations": 10
+      },
+      "completion": {
+        "stage": "smoke",
+        "epochs": 1,
+        "elapsed_seconds": 50.32670041703386
+      },
+      "config": "../configs/smoke/bottle_vicreg.json",
+      "source_snapshot_hashes": {
+        "metrics.py": "163fb615759b0a0924b078b6ce95853ddc3c0704ce08a8e37b0afb37b2193508",
+        "run.py": "ca189722d04713ad521d7c714a5515e74b262d5c402ccdbfbea3986d2f4040b2",
+        "config.py": "a3dfbeb4f7dcdf8f9809aae806f53979eeae2b77e0bc3647f4c8249e7f5faa9b",
+        "models.py": "6f271d51bed59d6782df903dccaff272d02f60c4c499e8888013678ee05cf50a",
+        "download.py": "ce1b46dac17d89dfa47d2599f1615dad5c29ef9e991a2453f3b8ee774b52f0bd",
+        "io.py": "f20d05c9d6b195905ab2e451cf34ac7504dc50aeaf93fe7b4d1d5fd034ac3766",
+        "__init__.py": "e13c5aea1a4aebc0dc66ed6c3e39a3bff862db8408f9de73f7421a9d2a07cab5",
+        "augment.py": "1df2cbb475f5bffc4196ccec6e75bf3a6f95b11af5c98c4cf4ff6fbf5371567c",
+        "cli.py": "608447e84139e5691d29d774c81cf9f186314586a4abe0dd19055d4fbb40faed",
+        "probes.py": "78dfae4cc3729afc9b7c7039fb796c451dafbaf141bd58f31ccf74f3cd7a5cfa",
+        "data.py": "516dd6359888944c349872198835d7cd182a65d1178f3071b11139e836e57d90",
+        "analyze.py": "eb798351a8b2994e48b2b27b7e1c9b22b35a55f04a4c92020a2e4c7b84ecec4c"
+      },
+      "all_checkpoints_have_two_probes": true
+    },
+    {
+      "dataset": "bottle",
+      "method": "masked_reconstruction",
+      "epochs": 1,
+      "seed": 9101,
+      "image_size": 224,
+      "batch_size": 16,
+      "probe_grid": {
+        "logreg_C": [
+          1.0
+        ],
+        "class_weights": [
+          null
+        ],
+        "logreg_max_iter": 10000,
+        "catboost_depth": [
+          2
+        ],
+        "catboost_l2": [
+          3.0
+        ],
+        "catboost_iterations": 10
+      },
+      "completion": {
+        "stage": "smoke",
+        "epochs": 1,
+        "elapsed_seconds": 41.5470972500043
+      },
+      "config": "../configs/smoke/bottle_masked_reconstruction.json",
+      "source_snapshot_hashes": {
+        "metrics.py": "163fb615759b0a0924b078b6ce95853ddc3c0704ce08a8e37b0afb37b2193508",
+        "run.py": "ca189722d04713ad521d7c714a5515e74b262d5c402ccdbfbea3986d2f4040b2",
+        "config.py": "a3dfbeb4f7dcdf8f9809aae806f53979eeae2b77e0bc3647f4c8249e7f5faa9b",
+        "models.py": "6f271d51bed59d6782df903dccaff272d02f60c4c499e8888013678ee05cf50a",
+        "download.py": "ce1b46dac17d89dfa47d2599f1615dad5c29ef9e991a2453f3b8ee774b52f0bd",
+        "io.py": "f20d05c9d6b195905ab2e451cf34ac7504dc50aeaf93fe7b4d1d5fd034ac3766",
+        "__init__.py": "e13c5aea1a4aebc0dc66ed6c3e39a3bff862db8408f9de73f7421a9d2a07cab5",
+        "augment.py": "1df2cbb475f5bffc4196ccec6e75bf3a6f95b11af5c98c4cf4ff6fbf5371567c",
+        "cli.py": "608447e84139e5691d29d774c81cf9f186314586a4abe0dd19055d4fbb40faed",
+        "probes.py": "78dfae4cc3729afc9b7c7039fb796c451dafbaf141bd58f31ccf74f3cd7a5cfa",
+        "data.py": "516dd6359888944c349872198835d7cd182a65d1178f3071b11139e836e57d90",
+        "analyze.py": "eb798351a8b2994e48b2b27b7e1c9b22b35a55f04a4c92020a2e4c7b84ecec4c"
+      },
+      "all_checkpoints_have_two_probes": true
+    }
+  ],
+  "real_test_labels_used_for_model_evaluation": false,
+  "test_evaluation_path_checked_on": "synthetic fixtures only",
+  "environment": {
+    "python": "3.13.0",
+    "platform": "macOS-15.3.2-arm64-arm-64bit-Mach-O",
+    "device": "cpu",
+    "packages": {
+      "torch": "2.13.0",
+      "torchvision": "0.28.0",
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "catboost": "1.2.10",
+      "scipy": "1.18.0",
+      "Pillow": "12.3.0",
+      "matplotlib": "3.10.9"
+    },
+    "git_commit": "1b476087dfaed7dd918cf40f5820ee0df269d44c",
+    "git_status": "M README.md\n?? configs/\n?? docs/\n?? manifests/\n?? pyproject.toml\n?? reports/\n?? requirements-tested.txt\n?? src/\n?? tests/",
+    "cuda": null
+  },
+  "planned_runs": {
+    "primary": 270,
+    "full_augmentation_grid_including_primary": 3240
+  },
+  "source_hashes_at_final_validation": {
+    "metrics.py": "163fb615759b0a0924b078b6ce95853ddc3c0704ce08a8e37b0afb37b2193508",
+    "run.py": "ca189722d04713ad521d7c714a5515e74b262d5c402ccdbfbea3986d2f4040b2",
+    "config.py": "a3dfbeb4f7dcdf8f9809aae806f53979eeae2b77e0bc3647f4c8249e7f5faa9b",
+    "models.py": "6f271d51bed59d6782df903dccaff272d02f60c4c499e8888013678ee05cf50a",
+    "download.py": "ce1b46dac17d89dfa47d2599f1615dad5c29ef9e991a2453f3b8ee774b52f0bd",
+    "io.py": "f20d05c9d6b195905ab2e451cf34ac7504dc50aeaf93fe7b4d1d5fd034ac3766",
+    "__init__.py": "e13c5aea1a4aebc0dc66ed6c3e39a3bff862db8408f9de73f7421a9d2a07cab5",
+    "augment.py": "1df2cbb475f5bffc4196ccec6e75bf3a6f95b11af5c98c4cf4ff6fbf5371567c",
+    "cli.py": "d275a5482b2f5d918d471c571dfbe33b84cea73701fba9c78d093bf9e7ef91ed",
+    "probes.py": "73a3eddcd324dc14f0ae3a36d701b673c8fa4b53d4be907ef62bb606e0c01eee",
+    "data.py": "98c957c04942f45dbe58463ad97f0ca6f9214b63680b01b52ba91d1066fd0802",
+    "analyze.py": "0f4cda8ee0bea1cc47f3e15939ad35d0ff588dc181b550816bc56c6a318f543e"
+  },
+  "plot_verification": {
+    "cardio": "smoke_cardio/cardio_mean_0e27ee5828_validation.png",
+    "bottle": "smoke_bottle/bottle_mean_c91d4839bd_validation.png",
+    "final_plot_regression_test": "test_end_to_end[simclr-table]: passed",
+    "svg_csv_integrity_after_whitespace_normalization": "passed"
+  }
+}

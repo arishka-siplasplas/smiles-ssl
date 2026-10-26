@@ -1,0 +1,7 @@
+{
+  "cardio_mean_0e27ee5828": [
+    "runs/smoke_cardio/masked_reconstruction",
+    "runs/smoke_cardio/simclr",
+    "runs/smoke_cardio/vicreg"
+  ]
+}
