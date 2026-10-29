@@ -28,12 +28,18 @@ def validate_config(c):
         raise ValueError('v1 uses random initialization only.')
     if c['epochs'] < 1 or c['batch_size'] < 2 or c['learning_rate'] <= 0:
         raise ValueError('Invalid optimization settings.')
+    if c.get('schedule_epochs', c['epochs']) < c['epochs']:
+        raise ValueError('Learning-rate schedule horizon must cover the run.')
     if sorted(set(c['checkpoints'])) != c['checkpoints'] or c['checkpoints'][0] != 0 or c['checkpoints'][-1] != c['epochs']:
         raise ValueError('Checkpoints must be sorted, unique and include epoch 0 and final epoch.')
     if c['short_epoch'] not in c['checkpoints']:
         raise ValueError('Short comparison epoch must be saved.')
     a = c['augmentation']
-    if a['family'] not in ('zero', 'mean', 'donor', 'noise') or not 0 < a['fraction'] < 1:
+    sampling = a.get('mask_sampling', 'fixed_count')
+    if sampling not in ('fixed_count', 'bernoulli') or (sampling == 'bernoulli' and c['modality'] != 'table'):
+        raise ValueError('Bernoulli masks are defined only for table calibration.')
+    identity = sampling == 'bernoulli' and a['fraction'] == 0 and c['method'] != 'masked_reconstruction'
+    if a['family'] not in ('zero', 'mean', 'donor', 'noise') or not (identity or 0 < a['fraction'] < 1):
         raise ValueError('Invalid augmentation.')
     if a['family'] == 'noise' and a['sigma'] <= 0:
         raise ValueError('Noise sigma must be positive.')
@@ -67,5 +73,6 @@ def grid(scope='primary', modality=None):
 
 def run_id(c):
     a = c['augmentation']
+    suffix = '_bernoulli' if a.get('mask_sampling') == 'bernoulli' else ''
     return (f"{c['modality']}_{c['dataset']}_{c['method']}_{a['family']}"
-            f"_p{a['fraction']:g}_s{a['sigma']:g}_seed{c['seed']}")
+            f"_p{a['fraction']:g}_s{a['sigma']:g}_seed{c['seed']}{suffix}")

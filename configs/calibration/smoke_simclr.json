@@ -1,0 +1,47 @@
+{
+  "protocol_version": 1,
+  "stage": "calibration_smoke",
+  "modality": "table",
+  "dataset": "cardio",
+  "method": "simclr",
+  "seed": 9201,
+  "split_seed": 20261026,
+  "epochs": 2,
+  "checkpoints": [
+    0,
+    2
+  ],
+  "short_epoch": 0,
+  "batch_size": 256,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "warmup_epochs": 10,
+  "image_size": 224,
+  "initialization": "random",
+  "num_workers": 0,
+  "threads": 1,
+  "augmentation": {
+    "family": "mean",
+    "fraction": 0.01,
+    "sigma": 0.0,
+    "patch_size": 16,
+    "mask_sampling": "bernoulli"
+  },
+  "probe": {
+    "logreg_C": [
+      1.0
+    ],
+    "class_weights": [
+      null
+    ],
+    "logreg_max_iter": 10000,
+    "catboost_depth": [
+      3
+    ],
+    "catboost_l2": [
+      3.0
+    ],
+    "catboost_iterations": 10
+  },
+  "schedule_epochs": 1000
+}

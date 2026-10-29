@@ -1,0 +1,303 @@
+{
+  "date": "2026-10-29",
+  "screen_datasets": [
+    "cardio",
+    "mammography",
+    "annthyroid"
+  ],
+  "screen_candidates_per_dataset": 21,
+  "screen_uses_outer_validation": false,
+  "screen_uses_test": false,
+  "ssl_pilot_stage_b_started": false,
+  "long_runs_started": false,
+  "planned_pilots": 180,
+  "technical_smokes": [
+    {
+      "method": "simclr",
+      "dataset": "cardio",
+      "config": {
+        "protocol_version": 1,
+        "stage": "calibration_smoke",
+        "modality": "table",
+        "dataset": "cardio",
+        "method": "simclr",
+        "seed": 9201,
+        "split_seed": 20261026,
+        "epochs": 2,
+        "checkpoints": [
+          0,
+          2
+        ],
+        "short_epoch": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "warmup_epochs": 10,
+        "image_size": 224,
+        "initialization": "random",
+        "num_workers": 0,
+        "threads": 1,
+        "augmentation": {
+          "family": "mean",
+          "fraction": 0.01,
+          "sigma": 0.0,
+          "patch_size": 16,
+          "mask_sampling": "bernoulli"
+        },
+        "probe": {
+          "logreg_C": [
+            1.0
+          ],
+          "class_weights": [
+            null
+          ],
+          "logreg_max_iter": 10000,
+          "catboost_depth": [
+            3
+          ],
+          "catboost_l2": [
+            3.0
+          ],
+          "catboost_iterations": 10
+        },
+        "schedule_epochs": 1000
+      },
+      "completion": {
+        "stage": "calibration_smoke",
+        "epochs": 2,
+        "elapsed_seconds": 0.13619475000086823
+      },
+      "loss": [
+        {
+          "epoch": 1,
+          "lr": 0.0001,
+          "objects_used": 1099,
+          "steps": 5,
+          "first_view_selected_cell_fraction": 0.010745699553706833,
+          "first_view_selected_row_fraction": 0.19927206551410373,
+          "empty_target_batches_skipped": 0,
+          "loss_averaging_weight": "objects",
+          "ssl_loss": 6.119301968644813,
+          "nt_xent": 6.119301968644813
+        },
+        {
+          "epoch": 2,
+          "lr": 0.0002,
+          "objects_used": 1099,
+          "steps": 5,
+          "first_view_selected_cell_fraction": 0.010789028987391135,
+          "first_view_selected_row_fraction": 0.21019108280254778,
+          "empty_target_batches_skipped": 0,
+          "loss_averaging_weight": "objects",
+          "ssl_loss": 6.105741673973715,
+          "nt_xent": 6.105741673973715
+        }
+      ]
+    },
+    {
+      "method": "vicreg",
+      "dataset": "cardio",
+      "config": {
+        "protocol_version": 1,
+        "stage": "calibration_smoke",
+        "modality": "table",
+        "dataset": "cardio",
+        "method": "vicreg",
+        "seed": 9201,
+        "split_seed": 20261026,
+        "epochs": 2,
+        "checkpoints": [
+          0,
+          2
+        ],
+        "short_epoch": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "warmup_epochs": 10,
+        "image_size": 224,
+        "initialization": "random",
+        "num_workers": 0,
+        "threads": 1,
+        "augmentation": {
+          "family": "mean",
+          "fraction": 0.01,
+          "sigma": 0.0,
+          "patch_size": 16,
+          "mask_sampling": "bernoulli"
+        },
+        "probe": {
+          "logreg_C": [
+            1.0
+          ],
+          "class_weights": [
+            null
+          ],
+          "logreg_max_iter": 10000,
+          "catboost_depth": [
+            3
+          ],
+          "catboost_l2": [
+            3.0
+          ],
+          "catboost_iterations": 10
+        },
+        "schedule_epochs": 1000
+      },
+      "completion": {
+        "stage": "calibration_smoke",
+        "epochs": 2,
+        "elapsed_seconds": 0.09108129100059159
+      },
+      "loss": [
+        {
+          "epoch": 1,
+          "lr": 0.0001,
+          "objects_used": 1099,
+          "steps": 5,
+          "first_view_selected_cell_fraction": 0.010745699553706833,
+          "first_view_selected_row_fraction": 0.19927206551410373,
+          "empty_target_batches_skipped": 0,
+          "loss_averaging_weight": "objects",
+          "ssl_loss": 24.72059982098483,
+          "invariance": 5.807694358056366e-07,
+          "variance": 0.9888234044119268,
+          "covariance": 1.3368575364902021e-08
+        },
+        {
+          "epoch": 2,
+          "lr": 0.0002,
+          "objects_used": 1099,
+          "steps": 5,
+          "first_view_selected_cell_fraction": 0.010789028987391135,
+          "first_view_selected_row_fraction": 0.21019108280254778,
+          "empty_target_batches_skipped": 0,
+          "loss_averaging_weight": "objects",
+          "ssl_loss": 24.71225419187676,
+          "invariance": 5.480980092975464e-07,
+          "variance": 0.9884896149301226,
+          "covariance": 2.6235870872629415e-08
+        }
+      ]
+    },
+    {
+      "method": "masked_reconstruction",
+      "dataset": "cardio",
+      "config": {
+        "protocol_version": 1,
+        "stage": "calibration_smoke",
+        "modality": "table",
+        "dataset": "cardio",
+        "method": "masked_reconstruction",
+        "seed": 9201,
+        "split_seed": 20261026,
+        "epochs": 2,
+        "checkpoints": [
+          0,
+          2
+        ],
+        "short_epoch": 0,
+        "batch_size": 256,
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "warmup_epochs": 10,
+        "image_size": 224,
+        "initialization": "random",
+        "num_workers": 0,
+        "threads": 1,
+        "augmentation": {
+          "family": "mean",
+          "fraction": 0.01,
+          "sigma": 0.0,
+          "patch_size": 16,
+          "mask_sampling": "bernoulli"
+        },
+        "probe": {
+          "logreg_C": [
+            1.0
+          ],
+          "class_weights": [
+            null
+          ],
+          "logreg_max_iter": 10000,
+          "catboost_depth": [
+            3
+          ],
+          "catboost_l2": [
+            3.0
+          ],
+          "catboost_iterations": 10
+        },
+        "schedule_epochs": 1000
+      },
+      "completion": {
+        "stage": "calibration_smoke",
+        "epochs": 2,
+        "elapsed_seconds": 0.07341995900060283
+      },
+      "loss": [
+        {
+          "epoch": 1,
+          "lr": 0.0001,
+          "objects_used": 1099,
+          "steps": 5,
+          "first_view_selected_cell_fraction": 0.011005676155812643,
+          "first_view_selected_row_fraction": 0.20928116469517744,
+          "empty_target_batches_skipped": 0,
+          "loss_averaging_weight": "selected_targets",
+          "ssl_loss": 1.9733533685601603,
+          "masked_mse": 1.9733533685601603
+        },
+        {
+          "epoch": 2,
+          "lr": 0.0002,
+          "objects_used": 1099,
+          "steps": 5,
+          "first_view_selected_cell_fraction": 0.010485722951601023,
+          "first_view_selected_row_fraction": 0.19745222929936307,
+          "empty_target_batches_skipped": 0,
+          "loss_averaging_weight": "selected_targets",
+          "ssl_loss": 0.8694536077582147,
+          "masked_mse": 0.8694536077582147
+        }
+      ]
+    }
+  ],
+  "full_tests": {
+    "passed": 30,
+    "report": "tests.xml"
+  },
+  "source_hashes": {
+    "metrics.py": "163fb615759b0a0924b078b6ce95853ddc3c0704ce08a8e37b0afb37b2193508",
+    "run.py": "7504f68fe31638fe65b006c723d3b594521cbcd330ec2c427802b1f57ea46474",
+    "config.py": "0d5ec5adc2cbded56341ede59183c716e1aa5bed27f38a61ece23d7123ebce2d",
+    "models.py": "6f271d51bed59d6782df903dccaff272d02f60c4c499e8888013678ee05cf50a",
+    "download.py": "ce1b46dac17d89dfa47d2599f1615dad5c29ef9e991a2453f3b8ee774b52f0bd",
+    "io.py": "f20d05c9d6b195905ab2e451cf34ac7504dc50aeaf93fe7b4d1d5fd034ac3766",
+    "__init__.py": "e13c5aea1a4aebc0dc66ed6c3e39a3bff862db8408f9de73f7421a9d2a07cab5",
+    "augment.py": "edcaf0b6754265157f43a5224a08a8b021c448198f630b64b3e2bc8d299f9d64",
+    "cli.py": "6edd04e01e875d1ed096258dbb52ea3486c2f4ac9d7ce4f7a43e2e73b83260f8",
+    "probes.py": "73a3eddcd324dc14f0ae3a36d701b673c8fa4b53d4be907ef62bb606e0c01eee",
+    "data.py": "98c957c04942f45dbe58463ad97f0ca6f9214b63680b01b52ba91d1066fd0802",
+    "calibration.py": "a9b77d487ab4abd6d0f3ae96c1a60996b3540480e25e6f22781d6fca0d4e8cc9",
+    "analyze.py": "0f4cda8ee0bea1cc47f3e15939ad35d0ff588dc181b550816bc56c6a318f543e"
+  },
+  "environment": {
+    "python": "3.13.0",
+    "platform": "macOS-15.3.2-arm64-arm-64bit-Mach-O",
+    "device": "cpu",
+    "packages": {
+      "torch": "2.13.0",
+      "torchvision": "0.28.0",
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.0",
+      "catboost": "1.2.10",
+      "scipy": "1.18.0",
+      "Pillow": "12.3.0",
+      "matplotlib": "3.10.9"
+    },
+    "git_commit": "3dff02e098679e8af95f7d02d372770cad592b73",
+    "git_status": "M README.md\n M docs/PROTOCOL_RU.md\n M src/smiles_ssl/augment.py\n M src/smiles_ssl/cli.py\n M src/smiles_ssl/config.py\n M src/smiles_ssl/run.py\n?? configs/calibration/\n?? docs/AUGMENTATION_CALIBRATION_RU.md\n?? reports/augmentation_calibration_v1/\n?? scripts/\n?? src/smiles_ssl/calibration.py\n?? tests/test_calibration.py",
+    "cuda": null
+  }
+}

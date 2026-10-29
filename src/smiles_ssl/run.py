@@ -152,10 +152,13 @@ def train(config_path, manifest_path, data_root, output, device='cpu', resume=Fa
     if available == 0:
         raise ValueError('No eligible continuous features for noise.')
     total_units = input_dim if c['modality'] == 'table' else available
-    selected_units = max(1, min(available, total_units - 1, round(available * c['augmentation']['fraction'])))
+    bernoulli = c['augmentation'].get('mask_sampling') == 'bernoulli'
+    selected_units = (None if bernoulli else max(1, min(available, total_units - 1, round(available * c['augmentation']['fraction']))))
     write_json(out / 'augmentation_stats.json', {'image_mean': image_mean, 'preprocessing': prep,
                                                 'eligible_units': available, 'selected_units': selected_units,
-                                                'actual_fraction_of_all_units': selected_units / total_units})
+                                                'expected_selected_units': available * c['augmentation']['fraction'] if bernoulli else selected_units,
+                                                'actual_fraction_of_all_units': None if bernoulli else selected_units / total_units,
+                                                'mask_sampling': c['augmentation'].get('mask_sampling', 'fixed_count')})
     history, first_epoch, elapsed_before = [], 1, 0.
     if resume:
         saved = torch.load(out / 'latest.pt', map_location='cpu', weights_only=False)
@@ -179,15 +182,17 @@ def train(config_path, manifest_path, data_root, output, device='cpu', resume=Fa
         save_latest(0)
     for epoch in range(first_epoch, c['epochs'] + 1):
         model.train()
-        warmup = min(c['warmup_epochs'], c['epochs'])
+        schedule_epochs = c.get('schedule_epochs', c['epochs'])
+        warmup = min(c['warmup_epochs'], schedule_epochs)
         if warmup and epoch <= warmup:
             factor = epoch / warmup
         else:
-            progress = (epoch - warmup - 1) / max(1, c['epochs'] - warmup)
+            progress = (epoch - warmup - 1) / max(1, schedule_epochs - warmup)
             factor = .5 * (1 + math.cos(math.pi * progress))
         for group in optimizer.param_groups:
             group['lr'] = c['learning_rate'] * factor
-        totals, used, steps = {}, 0, 0
+        totals, used, steps, loss_weight_sum = {}, 0, 0, 0
+        selected_cells, all_cells, changed_rows, generated_rows, empty_targets = 0, 0, 0, 0, 0
         for indices, clean in loader:
             if len(clean) < 2:
                 continue  # Same singleton policy for all three methods.
@@ -197,6 +202,15 @@ def train(config_path, manifest_path, data_root, output, device='cpu', resume=Fa
                 return corrupt(clean, donor)
             a, mask = view()
             b = view()[0] if c['method'] != 'masked_reconstruction' else None
+            selected_cells += int(mask.sum())
+            all_cells += mask.numel()
+            changed_rows += int(mask.flatten(1).any(1).sum())
+            generated_rows += len(mask)
+            if c['method'] == 'masked_reconstruction' and not mask.any():
+                # Never manufacture a target by forcing a mask: that changes the
+                # requested weak distribution, especially for six-feature data.
+                empty_targets += 1
+                continue
             optimizer.zero_grad(set_to_none=True)
             loss, components = model.objective(clean, a, mask, b)
             if not torch.isfinite(loss):
@@ -205,12 +219,19 @@ def train(config_path, manifest_path, data_root, output, device='cpu', resume=Fa
             optimizer.step()
             used += len(clean)
             steps += 1
+            loss_weight = int(mask.sum()) if c['method'] == 'masked_reconstruction' else len(clean)
+            loss_weight_sum += loss_weight
             for k, v in {'ssl_loss': loss, **components}.items():
-                totals[k] = totals.get(k, 0.) + float(v.detach()) * len(clean)
+                totals[k] = totals.get(k, 0.) + float(v.detach()) * loss_weight
         if used == 0:
             raise ValueError('No train minibatches with at least two samples.')
         history.append({'epoch': epoch, 'lr': c['learning_rate'] * factor,
-                        'objects_used': used, 'steps': steps, **{k: v / used for k, v in totals.items()}})
+                        'objects_used': used, 'steps': steps,
+                        'first_view_selected_cell_fraction': selected_cells / all_cells,
+                        'first_view_selected_row_fraction': changed_rows / generated_rows,
+                        'empty_target_batches_skipped': empty_targets,
+                        'loss_averaging_weight': 'selected_targets' if c['method'] == 'masked_reconstruction' else 'objects',
+                        **{k: v / loss_weight_sum for k, v in totals.items()}})
         if epoch in c['checkpoints']:
             evaluate_checkpoint(model, data, labels, c, out, epoch, device, generator)
         write_json(out / 'loss.json', history)

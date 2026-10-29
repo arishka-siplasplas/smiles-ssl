@@ -6,6 +6,14 @@ VICReg и masked reconstruction, адаптацию принципа MAE.
 
 Ветка: `experiments/ssl-anomaly-long-pretrain`.
 
+**2026-10-29:** добавлен [отдельный подбор аугментаций для аномалий](docs/AUGMENTATION_CALIBRATION_RU.md).
+Для таблиц сначала используется диагностика на внутренних частях train,
+затем короткие SSL-пилоты и выбор по чистому validation. Маски Bernoulli
+позволяют тестировать слабые воздействия без принудительной замены одного
+из шести признаков. Пулы среднего/доноров остаются смешанными и не используют метки.
+Предварительная проверка трёх таблиц выполнена; [короткий список, графики и ограничения](reports/augmentation_calibration_v1/SUMMARY_RU.md).
+Подготовлен план 180 SSL-пилотов, но этап выбора силы после SSL ещё не запускался.
+
 - [Протокол и критерии проверки гипотезы](docs/PROTOCOL_RU.md).
 - [Источники и ограничения данных](docs/DATA_RU.md).
 - [Отчёт технической проверки](reports/verification.json).
@@ -40,7 +48,8 @@ smiles-ssl download-mvtec --output data/mvtec
 smiles-ssl prepare --modality image --data-root data/mvtec \
   --output manifests/mvtec_replication --seed 20261027
 
-# Эти команды только сохраняют конфиги, обучение не запускают.
+# Эти команды сохраняют исходные планы v1, обучение не запускают.
+# Для новых табличных запусков используйте процедуру калибровки по ссылке выше.
 smiles-ssl plan --scope primary --output plans/primary
 smiles-ssl plan --scope augmentations --modality table --output plans/table_augmentations
 smiles-ssl plan --stage pilot --dataset cardio --output plans/pilot_cardio

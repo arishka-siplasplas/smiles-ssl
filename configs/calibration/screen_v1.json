@@ -1,0 +1,29 @@
+{
+  "version": "tabular-augmentation-calibration-v1",
+  "folds": 3,
+  "fold_seed": 20261029,
+  "draw_seeds": [
+    7101,
+    7102,
+    7103,
+    7104,
+    7105
+  ],
+  "fit_normal_fpr": 0.05,
+  "ap_drop_tolerance": 0.02,
+  "tpr_drop_tolerance": 0.05,
+  "fpr_rise_tolerance": 0.02,
+  "logreg_C": 1.0,
+  "catboost_iterations": 300,
+  "catboost_depth": 4,
+  "pilot_epochs": 100,
+  "schedule_epochs": 1000,
+  "pilot_seeds": [
+    3101,
+    3102,
+    3103
+  ],
+  "validation_near_tie_ap": 0.005,
+  "donor_policy": "uniform_all_fit_rows_no_labels",
+  "mean_policy": "all_fit_rows_no_labels"
+}

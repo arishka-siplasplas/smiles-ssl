@@ -2,10 +2,19 @@
 import torch
 
 
-def select_mask(shape, fraction, device, eligible=None):
+def select_mask(shape, fraction, device, eligible=None, sampling='fixed_count'):
     n, d = shape
-    if not 0 < fraction < 1:
-        raise ValueError('Corruption fraction must lie in (0,1).')
+    if sampling == 'bernoulli':
+        if not 0 <= fraction < 1:
+            raise ValueError('Bernoulli corruption probability must lie in [0,1).')
+        mask = torch.rand(n, d, device=device) < fraction
+        if eligible is not None:
+            if not eligible.any():
+                raise ValueError('No eligible continuous features for noise.')
+            mask &= eligible[None, :]
+        return mask
+    if sampling != 'fixed_count' or not 0 < fraction < 1:
+        raise ValueError('Fixed-count corruption fraction must lie in (0,1).')
     scores = torch.rand(n, d, device=device)
     if eligible is not None:
         scores[:, ~eligible] = 2
@@ -35,7 +44,7 @@ class Corruptor:
             if family == 'noise':
                 eligible = torch.zeros(x.shape[1], dtype=torch.bool, device=x.device)
                 eligible[self.noise_columns] = True
-            mask = select_mask(x.shape, fraction, x.device, eligible)
+            mask = select_mask(x.shape, fraction, x.device, eligible, cfg.get('mask_sampling', 'fixed_count'))
             if family == 'zero':
                 # Literal zero in source coordinates, then train standardization.
                 value = -torch.as_tensor(self.mean, device=x.device, dtype=x.dtype) / torch.as_tensor(self.scale, device=x.device, dtype=x.dtype)

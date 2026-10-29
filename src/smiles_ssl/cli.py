@@ -4,7 +4,7 @@ from pathlib import Path
 
 from .config import default_config, grid, run_id
 from .data import ADB_FILES, CATEGORIES, download_adbench, prepare_mvtec, prepare_table
-from .io import write_json
+from .io import read_json, write_json
 
 
 def main():
@@ -41,6 +41,18 @@ def main():
     p.add_argument('--data-root', required=True)
     p.add_argument('--device', choices=['cpu', 'cuda'], default='cpu')
     p = sub.add_parser('analyze')
+    p.add_argument('--runs', required=True)
+    p.add_argument('--output', required=True)
+    p = sub.add_parser('screen-augmentations', help='Tabular proxy screen using outer train only')
+    p.add_argument('--manifest', required=True)
+    p.add_argument('--data-root', required=True)
+    p.add_argument('--output', required=True)
+    p.add_argument('--spec', help='JSON with prespecified diagnostic settings')
+    p = sub.add_parser('plan-calibration', help='Create short SSL pilots from proxy screens')
+    p.add_argument('--screens', nargs='+', required=True)
+    p.add_argument('--output', required=True)
+    p = sub.add_parser('select-augmentations', help='Select common strengths from completed validation pilots')
+    p.add_argument('--plan', required=True)
     p.add_argument('--runs', required=True)
     p.add_argument('--output', required=True)
     args = parser.parse_args()
@@ -93,6 +105,17 @@ def main():
     elif args.command == 'analyze':
         from .analyze import analyze
         analyze(args.runs, args.output)
+    elif args.command == 'screen-augmentations':
+        from .calibration import screen
+        report = screen(args.manifest, args.data_root, args.output, read_json(args.spec) if args.spec else None)
+        print(f"{report['dataset']}: shortlisted {len(report['shortlist'])} candidates; SSL not launched.")
+    elif args.command == 'plan-calibration':
+        from .calibration import make_pilot_plan
+        jobs = make_pilot_plan(args.screens, args.output)
+        print(f'{len(jobs)} calibration runs planned; nothing launched.')
+    elif args.command == 'select-augmentations':
+        from .calibration import select_and_promote
+        select_and_promote(args.plan, args.runs, args.output)
 
 
 if __name__ == '__main__':

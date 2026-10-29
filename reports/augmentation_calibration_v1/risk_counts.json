@@ -1,0 +1,17 @@
+{
+  "cardio": {
+    "not_flagged": 11,
+    "review": 4,
+    "flagged": 6
+  },
+  "mammography": {
+    "not_flagged": 9,
+    "review": 3,
+    "flagged": 9
+  },
+  "annthyroid": {
+    "not_flagged": 10,
+    "flagged": 10,
+    "review": 1
+  }
+}
