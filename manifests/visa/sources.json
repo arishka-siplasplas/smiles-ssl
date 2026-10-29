@@ -1,0 +1,18 @@
+{
+  "official_repository": "https://github.com/amazon-science/spot-diff",
+  "official_commit": "2a692ab575001cbde74d402d897a7286086c6199",
+  "official_archive": {
+    "url": "https://amazon-visual-anomaly.s3.us-west-2.amazonaws.com/VisA_20220922.tar",
+    "bytes": 1929840640,
+    "sha256": "2eb8690c803ab37de0324772964100169ec8ba1fa3f7e94291c9ca673f40f362"
+  },
+  "augmentation_paper": "https://research.latinxinai.org/papers/neurips/2024/pdf/Daniel_Otero.pdf",
+  "augmentation_code_url": "https://drive.google.com/file/d/195NxZN3-4tT9sOJCiUD3c6OkauZsQ5UA/view",
+  "augmentation_zip_sha256": "dceb42598a1e7ab7f73854d93dee6857141d1b05e933290296100a3d524697e0",
+  "augmentation_code_limitation": "Author zip omits src/data/data_module.py; crop, jitter, probability verified from Appendix A and parse_arguments.py. Remaining crop defaults explicitly fixed in protocol.",
+  "spectral_reference": {
+    "path": "experiments/ssl/src/common.py",
+    "function": "geometry_metrics",
+    "function_sha256": "f29d6e94803b720c663d7dc9108a8286b86f36540a8840f73b0253e8a499a0d9"
+  }
+}

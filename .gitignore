@@ -12,3 +12,6 @@ plans/
 *.npz
 *.cbm
 *.joblib
+external/
+tmp/
+kaggle/bundle/

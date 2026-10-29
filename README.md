@@ -1,4 +1,13 @@
-# Длительный SSL-претрейн и классификация аномалий
+# VisA: длительность SSL и классификация аномалий
+
+Актуальная ветка: `experiments/visa-ssl-duration`.
+Пилот: [протокол VisA](docs/VISA_PROTOCOL_RU.md),
+[конфигурация ночного запуска](configs/visa/overnight.json).
+Три seed случайного ResNet-18 перед SSL; SimCLR, VICReg и CNN masked reconstruction,
+30 эпох, официальные разбиения и фиксированные подвыборки, LogisticRegression и LightGBM.
+Новый код: `src/visa_ssl`. Для сборки Kaggle notebook: `python scripts/build_visa_kaggle.py`.
+
+## Прежние эксперименты
 
 Гипотеза: продолжение SSL-обучения может снижать качество классификации
 аномалий, даже когда SSL-loss продолжает уменьшаться. Сравниваем SimCLR,
