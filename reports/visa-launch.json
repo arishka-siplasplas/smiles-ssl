@@ -1,0 +1,78 @@
+{
+  "checked_at_utc": "2026-10-29T21:47:00.062670+00:00",
+  "source_commit": "272d869",
+  "branch": "experiments/visa-ssl-duration",
+  "kaggle_url": "https://www.kaggle.com/code/arinabazukina/visa-ssl-duration-overnight-v1",
+  "kaggle_version": 1,
+  "observed_status": "RUNNING",
+  "observed_cuda_devices": 2,
+  "observed_torch": "2.11.0+cu128",
+  "official_images_verified": 1803,
+  "completed_baselines": 9,
+  "started_ssl": [
+    "cashew_simclr_p0.05_s6101",
+    "cashew_vicreg_p0.05_s6101"
+  ],
+  "planned_ssl_runs": 54,
+  "max_epochs": 30,
+  "training_time_budget_hours": 9,
+  "validation": {
+    "full_suite": "36 passed; PYTHONPATH=src:.deps",
+    "visa_suite_after_final_training_change": "6 passed",
+    "real_data_baseline": "cashew seed 6101, local CPU; separate from Kaggle measurements",
+    "all_jpegs_verified": true,
+    "plots_rendered_and_inspected": true,
+    "exact_resume_test": true
+  },
+  "local_baseline": {
+    "logistic_regression": {
+      "average_precision": 0.7530258327654202,
+      "roc_auc": 0.965375,
+      "threshold": 0.3456471264362335,
+      "prevalence": 0.16666666666666666,
+      "confusion_matrix": [
+        [
+          188,
+          12
+        ],
+        [
+          6,
+          34
+        ]
+      ],
+      "precision_normal": 0.9690721649484536,
+      "recall_normal": 0.94,
+      "f1_normal": 0.9543147208121827,
+      "support_normal": 200,
+      "precision_anomaly": 0.7391304347826086,
+      "recall_anomaly": 0.85,
+      "f1_anomaly": 0.7906976744186046,
+      "support_anomaly": 40
+    },
+    "lightgbm": {
+      "average_precision": 0.6662849819117785,
+      "roc_auc": 0.9507499999999999,
+      "threshold": 0.8738761965969419,
+      "prevalence": 0.16666666666666666,
+      "confusion_matrix": [
+        [
+          195,
+          5
+        ],
+        [
+          32,
+          8
+        ]
+      ],
+      "precision_normal": 0.8590308370044053,
+      "recall_normal": 0.975,
+      "f1_normal": 0.9133489461358314,
+      "support_normal": 200,
+      "precision_anomaly": 0.6153846153846154,
+      "recall_anomaly": 0.2,
+      "f1_anomaly": 0.3018867924528302,
+      "support_anomaly": 40
+    }
+  },
+  "results_note": "Running session outputs will be downloadable after completion. All baseline jobs completed before SSL; numeric Kaggle baseline results are in results/analysis/BASELINE.md."
+}

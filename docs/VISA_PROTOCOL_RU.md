@@ -166,6 +166,7 @@ PYTHONPATH=src python -m pytest tests/test_visa.py -q
 python scripts/build_visa_kaggle.py
 kaggle kernels push -p kaggle/bundle
 kaggle kernels status arinabazukina/visa-ssl-duration-overnight-v1
+kaggle kernels logs arinabazukina/visa-ssl-duration-overnight-v1 --follow
 kaggle kernels output arinabazukina/visa-ssl-duration-overnight-v1 -p runs/visa-kaggle
 ```
 
@@ -173,3 +174,16 @@ Notebook содержит неизменяемый снимок исходник
 напрямую с официального S3, проверяет наличие каждого пути и сохраняет SHA-256.
 Для локального использования: `python scripts/prepare_visa.py --manifest manifests/visa/fixed.json
 --output data/visa --archive /path/VisA_20220922.tar`.
+
+## Подтверждённый ночной запуск
+
+[Приватный notebook, version 1](https://www.kaggle.com/code/arinabazukina/visa-ssl-duration-overnight-v1)
+запущен из commit `272d869`. Живой журнал подтвердил две CUDA GPU,
+torch 2.11.0+cu128, совпадение SHA-256 всех 1803 изображений,
+завершение всех девяти baseline без ошибок и переход к SSL.
+Подробности проверки: `reports/visa-launch.json`.
+
+В конце сессии скачать outputs командой выше. Основная baseline-таблица лежит
+в `visa-experiment/results/analysis/BASELINE.md`, графики и CSV — рядом;
+`status.json` показывает, все ли 54 SSL-run завершены или достигнут лимит времени.
+Остановка локального клиента `kernels logs --follow` не останавливает Kaggle.
