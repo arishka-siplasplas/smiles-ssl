@@ -1,0 +1,12 @@
+{
+  "resnet18": {
+    "encoder_parameters": 11176512,
+    "feature_dimension": 512,
+    "initial_encoder_sha256_local": "17bb9ca59ffc057941d5a90be0d1cbbcabbd59259c3dcbf07133bbcd4d88f7d0"
+  },
+  "deit_tiny": {
+    "encoder_parameters": 5524416,
+    "feature_dimension": 192,
+    "initial_encoder_sha256_local": "3b5ff2d7a1bb8abefe3c9711a26f7553ee18acfce19a26c1ccffccaef22a1ff1"
+  }
+}

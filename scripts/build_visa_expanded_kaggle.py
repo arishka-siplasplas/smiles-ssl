@@ -15,7 +15,9 @@ def build(args):
     files = sorted(list((ROOT / 'src/visa_ssl').glob('*.py')) +
                    list((ROOT / 'manifests/visa-v2').glob('*')) +
                    [ROOT / p for p in ['configs/visa/expanded.json', 'manifests/visa/2cls_highshot.csv',
-                    'scripts/prepare_visa.py', 'docs/VISA_EXPANDED_PLAN_RU.md', 'tests/test_visa_expanded.py']])
+                    'manifests/visa/LICENSE-UPSTREAM', 'manifests/visa/LICENSE-DATASET',
+                    'scripts/prepare_visa.py', 'docs/VISA_PROTOCOL_RU.md',
+                    'docs/VISA_EXPANDED_PLAN_RU.md', 'tests/test_visa_expanded.py']])
     if not (ROOT / 'manifests/visa-v2/image_hashes.json').exists():
         raise RuntimeError('Freeze full official image inventory before building')
     stream = io.BytesIO()
@@ -84,12 +86,12 @@ result.check_returncode()
     notebook = {'nbformat': 4, 'nbformat_minor': 5,
         'metadata': {'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'}},
         'cells': [
-            {'cell_type': 'markdown', 'metadata': {}, 'source': [
+            {'cell_type': 'markdown', 'id': 'protocol', 'metadata': {}, 'source': [
                 f'# VisA v2 {args.mode}\n',
                 'Six fixed official categories, full training pool, three SSL seeds, three augmentations.\n',
                 'Random ResNet-18 / DeiT-Tiny; 100 epochs with deterministic frozen-encoder evaluation.\n',
                 'No pretrained weights. Resume is checked against config and manifest hashes.\n']},
-            {'cell_type': 'code', 'execution_count': None, 'metadata': {}, 'outputs': [], 'source': code.splitlines(True)}]}
+            {'cell_type': 'code', 'id': 'experiment', 'execution_count': None, 'metadata': {}, 'outputs': [], 'source': code.splitlines(True)}]}
     (bundle / 'experiment.ipynb').write_text(json.dumps(notebook, indent=1))
     metadata = {'id': 'arinabazukina/' + slug, 'title': 'VisA SSL V2 ' + args.mode.replace('_', ' '),
         'code_file': 'experiment.ipynb', 'language': 'python', 'kernel_type': 'notebook', 'is_private': True,

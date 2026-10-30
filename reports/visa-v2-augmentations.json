@@ -1,0 +1,37 @@
+{
+  "dataset": "VisA by Zou et al. (ECCV 2022)",
+  "source": "https://github.com/amazon-science/spot-diff",
+  "manifest_sha256": "86c7de6429785bc2b7ca82e3b3d8f821b16c062fb36048d9f8b4dd97eb7abca5",
+  "examples": [
+    {
+      "category": "cashew",
+      "path": "cashew/Data/Images/Anomaly/004.JPG",
+      "seed": 6101
+    },
+    {
+      "category": "chewinggum",
+      "path": "chewinggum/Data/Images/Anomaly/004.JPG",
+      "seed": 6102
+    },
+    {
+      "category": "fryum",
+      "path": "fryum/Data/Images/Anomaly/004.JPG",
+      "seed": 6103
+    },
+    {
+      "category": "candle",
+      "path": "candle/Data/Images/Anomaly/004.JPG",
+      "seed": 6104
+    },
+    {
+      "category": "capsules",
+      "path": "capsules/Data/Images/Anomaly/004.JPG",
+      "seed": 6105
+    },
+    {
+      "category": "pcb1",
+      "path": "pcb1/Data/Images/Anomaly/004.JPG",
+      "seed": 6106
+    }
+  ]
+}

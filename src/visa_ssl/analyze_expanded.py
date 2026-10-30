@@ -89,7 +89,7 @@ def analyze(root, plots=False):
             for ax, metric in zip(axes[row], RANKS):
                 for method, values in rank_group[rank_group.normalization == norm].groupby('method'):
                     plot_mean_sd(ax, values, metric, method)
-                ax.set_title(norm)
+                ax.set_title(f'{norm}; N={int(rank_group.n.iloc[0])}, D={int(rank_group.dimension.iloc[0])}')
         axes[0, 0].legend(fontsize=7)
         fig.suptitle(f'{name} | test | mean ± sample SD; n varies until all seeds finish')
         fig.savefig(out / f'{name}_quality_ranks.png', dpi=130)
