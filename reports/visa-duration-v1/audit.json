@@ -1,0 +1,38 @@
+{
+  "ssl_runs": 54,
+  "baseline_runs": 9,
+  "seeds": [
+    6101,
+    6102,
+    6103
+  ],
+  "epochs": [
+    0,
+    1,
+    2,
+    5,
+    10,
+    20,
+    30
+  ],
+  "quality_rows": 2322,
+  "rank_rows": 2322,
+  "loss_rows": 1620,
+  "paired_baseline_groups_verified": 108,
+  "amp_skipped_steps": 0,
+  "test_support_fixed": true,
+  "all_validation_recall_at_least_0_5": true,
+  "csv_sha256": {
+    "quality.csv": "debf2540028bc350b9a1bcd669ad19e68b18d4465d571f33fcd67923deef5252",
+    "ranks.csv": "8477479dd0d10b21f4ec3800d7d64e404c15f336a77c91ce25dc1f07f2b00892",
+    "loss.csv": "21fc54719aa601e03612754514f07e7763aa89fe4afa53553b50aeeaf5c2bf72"
+  },
+  "kaggle_job_status_verified": true,
+  "training_commit": "272d8698061cc151ec7c8a922d47f9f3a1b94e98",
+  "metadata_sha256": {
+    "environment.json": "953af124362328b8a1c711e4e0ca0606d7bf3e6abea031091fe24eeb22df851a",
+    "config.json": "f3e71052de94a02376ea7164b9b9dedccfe662583bc030f6063d4f9f2936af2a",
+    "source_snapshot.json": "a2ccf5166cf26df6827d451991a4222aa6933de8a932f4747c38b62200fd1dd5",
+    "status.json": "2691639fe1d2c44c66a2de0089781291e96c9e3976c94a3b23366c13a216f069"
+  }
+}

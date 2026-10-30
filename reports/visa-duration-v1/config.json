@@ -1,0 +1,81 @@
+{
+  "protocol": "visa-duration-v1",
+  "categories": [
+    "cashew",
+    "chewinggum",
+    "fryum"
+  ],
+  "seeds": [
+    6101,
+    6102,
+    6103
+  ],
+  "split_seed": 20261030,
+  "validation_fraction": 0.2,
+  "ssl_size": 240,
+  "anomaly_fractions": [
+    0.05,
+    0.2
+  ],
+  "methods": [
+    "simclr",
+    "vicreg",
+    "masked_reconstruction"
+  ],
+  "epochs": 30,
+  "checkpoint_epochs": [
+    0,
+    1,
+    2,
+    5,
+    10,
+    20,
+    30
+  ],
+  "image_size": 224,
+  "batch_size": 64,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "temperature": 0.5,
+  "vicreg_coefficients": [
+    25.0,
+    25.0,
+    1.0
+  ],
+  "projector_hidden": 512,
+  "projector_output": 128,
+  "patch_size": 16,
+  "mask_ratio": 0.75,
+  "minimum_validation_recall": 0.5,
+  "logreg_C": [
+    0.01,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "lightgbm_grid": [
+    {
+      "num_leaves": 7,
+      "min_child_samples": 10,
+      "n_estimators": 100
+    },
+    {
+      "num_leaves": 15,
+      "min_child_samples": 10,
+      "n_estimators": 100
+    },
+    {
+      "num_leaves": 7,
+      "min_child_samples": 20,
+      "n_estimators": 200
+    },
+    {
+      "num_leaves": 15,
+      "min_child_samples": 20,
+      "n_estimators": 200
+    }
+  ],
+  "official_commit": "2a692ab575001cbde74d402d897a7286086c6199",
+  "official_split": "2cls_highshot.csv",
+  "archive_url": "https://amazon-visual-anomaly.s3.us-west-2.amazonaws.com/VisA_20220922.tar"
+}

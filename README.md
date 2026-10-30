@@ -7,6 +7,14 @@
 30 эпох, официальные разбиения и фиксированные подвыборки, LogisticRegression и LightGBM.
 Новый код: `src/visa_ssl`. Для сборки Kaggle notebook: `python scripts/build_visa_kaggle.py`.
 
+Серия завершена: 54 SSL-run и 9 baseline. [Графики и переключатель условий](reports/visa-duration-v1/index.html),
+[precision](reports/visa-duration-v1/overview_precision_anomaly.png),
+[ROC-AUC](reports/visa-duration-v1/overview_roc_auc.png),
+[ранги raw](reports/visa-duration-v1/overview_ranks_raw.png),
+[ранги L2](reports/visa-duration-v1/overview_ranks_l2.png).
+Перестроение: `python scripts/plot_visa_results.py runs/visa-kaggle/visa-experiment/results --output reports/visa-duration-v1`.
+HTML нужно скачать и открыть в браузере; GitHub показывает его исходный код.
+
 ## Прежние эксперименты
 
 Гипотеза: продолжение SSL-обучения может снижать качество классификации

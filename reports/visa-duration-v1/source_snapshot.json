@@ -1,0 +1,24 @@
+{
+  "payload_sha256": "071021dc48ded1dc19bc8a2bc4894dde7ac9a8f7ba2f0f15561ccd861e2eef40",
+  "git_commit": "272d8698061cc151ec7c8a922d47f9f3a1b94e98",
+  "source_hashes": {
+    "configs/visa/overnight.json": "a025460117a603770c53608bc3a4a4cc33fea79c453a733629e47f6995e848af",
+    "docs/VISA_PROTOCOL_RU.md": "f1b0d12c3ada5bd6fdaa6ccf2276c3654efe5ed8b46bafddcdea6e54317ba8bf",
+    "manifests/visa/2cls_highshot.csv": "c3331eede15f2da8a75b380d4fbfb24f75ee036ec9a25147eca898da6e972f09",
+    "manifests/visa/LICENSE-DATASET": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+    "manifests/visa/LICENSE-UPSTREAM": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "manifests/visa/fixed.json": "ed9cce39072903ea465e04cd55e825c67ba7453aeb71946dad5f60da5084a596",
+    "manifests/visa/image_hashes.json": "f281764151a34079fb5786d9061a053b4d2a100433195c09b665c5868958096f",
+    "manifests/visa/sources.json": "29fb8f9c29e59ea1fbcb237a77a732feabd5b5a2154222249830a49f178e3332",
+    "scripts/prepare_visa.py": "e3976cd98c33d8c5b4b2a24dbb7676a82cd41cb0abb256887e3adeabfe54e055",
+    "src/visa_ssl/__init__.py": "6132bdcffe7e784de06b579f98d9eb8d57b5a4f8e50e9e7bac5ccd0242261ac4",
+    "src/visa_ssl/analyze.py": "3d2e3b62445d89f74a0e4a41a5c6276b025ae4fb5f8e575e5e7daa7b9f70c163",
+    "src/visa_ssl/data.py": "2a9fc6b5be28c6da859a832766b27c704c0bac83c46886b3f23d1efa52cfa651",
+    "src/visa_ssl/launch.py": "d47a93f62b9ea87bf42c96fac54c31fde364773bb95a32102a6553ad097b7ce0",
+    "src/visa_ssl/metrics.py": "00d951823a3d2f30a6d0daaa6b705e1e59235480dce2b121174d01b84a4acf60",
+    "src/visa_ssl/models.py": "fda8772bc3cbb5d46e1216920c98c32ebd6c408e3e6772a32be4dcf4c8095249",
+    "src/visa_ssl/probes.py": "c48c32d1896df012e142742acdd6e00ef3983a918e0c92646e08e914c96b1cc6",
+    "src/visa_ssl/run.py": "a6ae3aeae16a193a6284a949b2b15475bd826ca0811ba2c840ef5ddeda1810c1",
+    "tests/test_visa.py": "e8a0f86dc006f23f9e4eb7bbab61baa5138b622afd8268907ff0a8f0a05f3b67"
+  }
+}

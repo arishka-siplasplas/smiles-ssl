@@ -1,0 +1,576 @@
+{
+  "baseline_jobs": [
+    {
+      "category": "cashew",
+      "seed": 6101,
+      "method": "baseline",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6101,
+      "method": "baseline",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6101,
+      "method": "baseline",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6102,
+      "method": "baseline",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6102,
+      "method": "baseline",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6102,
+      "method": "baseline",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6103,
+      "method": "baseline",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6103,
+      "method": "baseline",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6103,
+      "method": "baseline",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    }
+  ],
+  "train_jobs": [
+    {
+      "category": "cashew",
+      "seed": 6101,
+      "method": "simclr",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6101,
+      "method": "vicreg",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6101,
+      "method": "simclr",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6101,
+      "method": "vicreg",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6101,
+      "method": "simclr",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6101,
+      "method": "vicreg",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6101,
+      "method": "simclr",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6101,
+      "method": "vicreg",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6101,
+      "method": "simclr",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6101,
+      "method": "vicreg",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6101,
+      "method": "simclr",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6101,
+      "method": "vicreg",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6102,
+      "method": "simclr",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6102,
+      "method": "vicreg",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6102,
+      "method": "simclr",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6102,
+      "method": "vicreg",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6102,
+      "method": "simclr",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6102,
+      "method": "vicreg",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6102,
+      "method": "simclr",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6102,
+      "method": "vicreg",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6102,
+      "method": "simclr",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6102,
+      "method": "vicreg",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6102,
+      "method": "simclr",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6102,
+      "method": "vicreg",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6103,
+      "method": "simclr",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6103,
+      "method": "vicreg",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6103,
+      "method": "simclr",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6103,
+      "method": "vicreg",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6103,
+      "method": "simclr",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6103,
+      "method": "vicreg",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "fraction": 0.05,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6103,
+      "method": "simclr",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6103,
+      "method": "vicreg",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "cashew",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6103,
+      "method": "simclr",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6103,
+      "method": "vicreg",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "chewinggum",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6103,
+      "method": "simclr",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6103,
+      "method": "vicreg",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0
+    },
+    {
+      "category": "fryum",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "fraction": 0.2,
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0
+    }
+  ],
+  "deadline": 1793342558.141169,
+  "stage": "ssl",
+  "status": "complete"
+}
