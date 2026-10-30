@@ -1,0 +1,17 @@
+{
+  "baseline_runs": 36,
+  "ssl_checks": 6,
+  "amp_skipped_steps": 0,
+  "pilot_baseline_results_exactly_reproduced": 54,
+  "compared_metrics": [
+    "precision_anomaly",
+    "recall_anomaly",
+    "f1_anomaly",
+    "roc_auc",
+    "average_precision",
+    "threshold"
+  ],
+  "official_images_sha256_verified": 4709,
+  "train_images": 2261,
+  "preflight_status": "preflight_complete"
+}

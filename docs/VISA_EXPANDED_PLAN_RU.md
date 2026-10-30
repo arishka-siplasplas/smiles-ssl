@@ -220,3 +220,23 @@ PYTHONPATH=src python -m visa_ssl.analyze_expanded /path/to/results --plots
 Необработанные эмбеддинги, predictions, модели пробинга и подробные метрики
 сохраняются для каждого checkpoint. Метаданные `environment.json` и
 `source_snapshot.json` фиксируют версии библиотек, GPU и точные исходники запуска.
+
+## Подтверждённый запуск 30 октября
+
+[GPU preflight, version 1](https://www.kaggle.com/code/arinabazukina/visa-ssl-v2-preflight)
+завершён: 36 baseline и шесть проверочных SSL-эпох, без ошибок и пропущенных AMP
+updates. Все 54 сочетания classifier/split для девяти ResNet-baseline старых
+категорий воспроизвели precision, recall, F1, AP, ROC-AUC и threshold из v1 точно.
+[Baseline-таблица](../reports/visa-v2-preflight/BASELINE.md) и
+[аудит](../reports/visa-v2-preflight/audit.json) сохранены в репозитории.
+Полный локальный набор проверок: 43 passed.
+
+Одновременно запущены приватные notebook, каждый version 1 и T4×2:
+
+- [ResNet-18, до 10 часов](https://www.kaggle.com/code/arinabazukina/visa-ssl-v2-resnet18).
+- [ViT-Tiny, до 10 часов](https://www.kaggle.com/code/arinabazukina/visa-ssl-v2-deit-tiny).
+
+Оба используют снимок исходников commit `ea53f97` и сохранённые состояния preflight.
+Проверенные начальные эпохи продолжаются с epoch 2. Полная сетка остаётся целью
+на несколько блоков; этот запуск ограничен указанным временем. Версии, SHA-256
+и ссылки записаны в [журнале запуска](../reports/visa-v2-launch.json).
