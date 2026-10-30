@@ -15,4 +15,5 @@ plans/
 external/
 tmp/
 kaggle/bundle/
+kaggle/bundles/
 reports/visa-duration-v1.zip

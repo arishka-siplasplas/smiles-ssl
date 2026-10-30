@@ -1,0 +1,10 @@
+{
+  "official_repository": "https://github.com/amazon-science/spot-diff",
+  "official_commit": "2a692ab575001cbde74d402d897a7286086c6199",
+  "official_csv": "../visa/2cls_highshot.csv",
+  "official_csv_sha256": "c3331eede15f2da8a75b380d4fbfb24f75ee036ec9a25147eca898da6e972f09",
+  "archive_url": "https://amazon-visual-anomaly.s3.us-west-2.amazonaws.com/VisA_20220922.tar",
+  "archive_sha256": "2eb8690c803ab37de0324772964100169ec8ba1fa3f7e94291c9ca673f40f362",
+  "augmentation_repository": "https://github.com/jaeminyoo/SSL-AD",
+  "augmentation_commit": "0249fa7d6460dbbf1c5db29ef87c771a9b6a3a61"
+}

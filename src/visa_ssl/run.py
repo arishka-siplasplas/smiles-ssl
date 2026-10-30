@@ -43,6 +43,17 @@ def save_torch(path, value):
     tmp.replace(path)
 
 
+def job_name(job, expanded=False):
+    if expanded:
+        base = f'{job["category"]}_{job["architecture"]}'
+        if job['method'] == 'baseline':
+            return f'{base}_baseline_s{job["seed"]}'
+        return f'{base}_{job["method"]}_a-{job["augmentation"]}_s{job["seed"]}'
+    if job['method'] == 'baseline':
+        return f'{job["category"]}_baseline_s{job["seed"]}'
+    return f'{job["category"]}_{job["method"]}_p{job["fraction"]:g}_s{job["seed"]}'
+
+
 @torch.inference_mode()
 def extract(backbone, records, root, config, device, workers):
     backbone.eval()
@@ -62,6 +73,7 @@ def checkpoint(backbone, groups, args, config, directory, epoch):
     if (target / 'metrics.json').exists():
         return
     target.mkdir(exist_ok=True)
+    started = time.monotonic()
     features, labels, ranks = {}, {}, {}
     before = state_hash(backbone)
     with torch.random.fork_rng(devices=[args.device.index or 0] if args.device.type == 'cuda' else []):
@@ -80,6 +92,7 @@ def checkpoint(backbone, groups, args, config, directory, epoch):
     joblib.dump(models, target / 'probes.joblib')
     write_json(target / 'metrics.json', {'epoch': epoch, 'encoder_sha256': before,
                                         'spectral': ranks, 'classifiers': probe_results})
+    write_json(target / 'timing.json', {'evaluation_seconds': time.monotonic() - started})
     print(f'EVALUATED {directory.name} epoch={epoch} ' + json.dumps({
         k: {m: v['splits']['test'][m] for m in ('precision_anomaly', 'average_precision', 'roc_auc')}
         for k, v in probe_results.items()}), flush=True)
@@ -88,10 +101,17 @@ def checkpoint(backbone, groups, args, config, directory, epoch):
 def run(args):
     config = json.loads(args.config.read_text())
     manifest = json.loads(args.manifest.read_text())
+    expanded = 'architectures' in config
+    architecture = getattr(args, 'architecture', 'resnet18')
+    augmentation = getattr(args, 'augmentation', 'baseline')
     if args.seed not in config['seeds'] or args.category not in config['categories']:
         raise ValueError('Run outside frozen protocol')
-    if args.method != 'baseline' and args.fraction not in config['anomaly_fractions']:
+    if not expanded and args.method != 'baseline' and args.fraction not in config['anomaly_fractions']:
         raise ValueError('Fraction outside frozen protocol')
+    if expanded and (architecture not in config['architectures'] or augmentation not in config['augmentations']):
+        raise ValueError('Architecture/augmentation outside frozen protocol')
+    if args.method not in ['baseline', *config['methods']]:
+        raise ValueError('Method outside frozen protocol')
     if config['epochs'] > 100 or 0 not in config['checkpoint_epochs']:
         raise ValueError('Protocol requires epoch zero and no more than 100 epochs')
     torch.set_num_threads(args.threads)
@@ -102,18 +122,25 @@ def run(args):
     torch.backends.cudnn.allow_tf32 = False
     seed_all(args.seed)
     groups = manifest['categories'][args.category]
-    baseline = args.output / f'{args.category}_baseline_s{args.seed}'
-    directory = baseline if args.method == 'baseline' else args.output / f'{args.category}_{args.method}_p{args.fraction:g}_s{args.seed}'
+    job = dict(category=args.category, seed=args.seed, method=args.method,
+               architecture=architecture, augmentation=augmentation, fraction=getattr(args, 'fraction', None))
+    baseline = args.output / job_name({**job, 'method': 'baseline'}, expanded)
+    directory = args.output / job_name(job, expanded)
     directory.mkdir(parents=True, exist_ok=True)
     identity = {'category': args.category, 'seed': args.seed, 'method': args.method,
-                'fraction': None if args.method == 'baseline' else args.fraction,
+                'fraction': None if args.method == 'baseline' else (
+                    sum(r['label'] for r in groups['ssl']['full_train']) / len(groups['ssl']['full_train'])
+                    if expanded else args.fraction),
                 'config_sha256': digest(config), 'manifest_sha256': manifest['manifest_sha256']}
+    if expanded:
+        identity.update(architecture=architecture, augmentation='none' if args.method == 'baseline' else augmentation,
+                        data_regime='full_train')
     if (directory / 'identity.json').exists():
         assert json.loads((directory / 'identity.json').read_text()) == identity, 'Resume identity mismatch'
     write_json(directory / 'identity.json', identity)
     if (directory / 'complete.json').exists():
         return 0
-    backbone = encoder(args.seed)
+    backbone = encoder(args.seed, architecture, config['image_size'])
     initial_hash = state_hash(backbone)
     backbone.to(args.device)
     if args.method == 'baseline':
@@ -142,15 +169,17 @@ def run(args):
         start, history = state['epoch'], state['history']
         if start in config['checkpoint_epochs']:
             checkpoint(backbone, groups, args, config, directory, start)
-    for epoch in range(start + 1, config['epochs'] + 1):
-        if time.time() >= args.deadline:
+    limit = min(config['epochs'], getattr(args, 'max_epoch', config['epochs']))
+    for epoch in range(start + 1, limit + 1):
+        stop_file = getattr(args, 'stop_file', None)
+        if time.time() >= args.deadline or (stop_file is not None and stop_file.exists()):
             write_json(directory / 'progress.json', {'status': 'paused', 'epoch': epoch - 1})
             return 75
         # Re-seeding at epoch boundaries permits exact resume without worker RNG capture.
         epoch_seed = args.seed * 1000 + epoch
         seed_all(epoch_seed)
-        loader = DataLoader(Images(args.data, groups['ssl'][str(args.fraction)],
-                                   transform(config['image_size'], True),
+        loader = DataLoader(Images(args.data, groups['ssl']['full_train' if expanded else str(args.fraction)],
+                                   transform(config['image_size'], True, augmentation),
                                    two_views=args.method != 'masked_reconstruction'),
                             batch_size=config['batch_size'], shuffle=True, drop_last=False,
                             num_workers=args.workers, generator=torch.Generator().manual_seed(epoch_seed),
@@ -181,14 +210,23 @@ def run(args):
                         'learning_rate': optimizer.param_groups[0]['lr'],
                         **{k: v / seen for k, v in totals.items()}})
         save_torch(latest, {'identity': identity, 'epoch': epoch, 'history': history,
-                           'model': model.state_dict(), 'optimizer': optimizer.state_dict(), 'scaler': scaler.state_dict()})
+                           'model': model.state_dict(), 'optimizer': optimizer.state_dict(), 'scaler': scaler.state_dict(),
+                           'rng_state': {'python': random.getstate(), 'numpy': np.random.get_state(),
+                                         'torch': torch.get_rng_state(),
+                                         'cuda': torch.cuda.get_rng_state_all() if args.device.type == 'cuda' else []},
+                           'resume_rng_strategy': 'deterministic epoch seed before next loader'})
         write_json(directory / 'loss.json', history)
         write_json(directory / 'progress.json', {'status': 'training', 'epoch': epoch, 'loss': history[-1]['loss']})
         print(f'TRAIN {directory.name} {json.dumps(history[-1])}', flush=True)
         if epoch in config['checkpoint_epochs']:
             checkpoint(backbone, groups, args, config, directory, epoch)
-    save_torch(directory / 'final.pt', {'encoder': backbone.state_dict(), 'model': model.state_dict(),
-                                      'identity': identity, 'epoch': config['epochs']})
+    if limit < config['epochs']:
+        write_json(directory / 'progress.json', {'status': 'paused', 'epoch': limit})
+        return 75
+    final = {'encoder': backbone.state_dict(), 'identity': identity, 'epoch': config['epochs']}
+    if not expanded:
+        final['model'] = model.state_dict()
+    save_torch(directory / 'final.pt', final)
     write_json(directory / 'complete.json', {'initial_encoder_sha256': initial_hash,
                                             'last_epoch': config['epochs'], 'status': 'complete'})
     latest.unlink(missing_ok=True)
@@ -203,6 +241,10 @@ def main():
     p.add_argument('--seed', type=int, required=True)
     p.add_argument('--method', required=True)
     p.add_argument('--fraction', type=float, default=0.05)
+    p.add_argument('--architecture', default='resnet18')
+    p.add_argument('--augmentation', default='baseline')
+    p.add_argument('--max-epoch', type=int, default=100)
+    p.add_argument('--stop-file', type=Path)
     p.add_argument('--device', default='cuda')
     p.add_argument('--workers', type=int, default=1)
     p.add_argument('--threads', type=int, default=1)

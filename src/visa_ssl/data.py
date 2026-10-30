@@ -43,7 +43,7 @@ def make_manifest(split_csv, config):
             train.extend(group[n:])
         test = [r for r in selected if r['official_split'] == 'test']
         ssl = {}
-        for fraction in config['anomaly_fractions']:
+        for fraction in config.get('anomaly_fractions', []):
             counts = {1: round(config['ssl_size'] * fraction)}
             counts[0] = config['ssl_size'] - counts[1]
             subset = []
@@ -53,6 +53,8 @@ def make_manifest(split_csv, config):
                     raise ValueError(f'Insufficient {category} class {label}: {counts[label]} / {len(pool)}')
                 subset.extend(pool[:counts[label]])
             ssl[str(fraction)] = sorted(subset, key=lambda r: r['path'])
+        if config.get('ssl_sampling') == 'full_train':
+            ssl['full_train'] = sorted(train, key=lambda r: r['path'])
         sets = {'probe_train': train, 'validation': validation, 'test': test}
         sets = {k: sorted(v, key=lambda r: r['path']) for k, v in sets.items()}
         ids = {k: {r['path'] for r in v} for k, v in sets.items()}
