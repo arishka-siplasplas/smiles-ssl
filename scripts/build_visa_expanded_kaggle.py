@@ -106,7 +106,8 @@ result.check_returncode()
                 'No pretrained weights. Resume is checked against config and manifest hashes.\n']},
             {'cell_type': 'code', 'id': 'experiment', 'execution_count': None, 'metadata': {}, 'outputs': [], 'source': code.splitlines(True)}]}
     (bundle / 'experiment.ipynb').write_text(json.dumps(notebook, indent=1))
-    metadata = {'id': 'arinabazukina/' + slug, 'title': 'VisA SSL V2 ' + args.mode.replace('_', ' '),
+    # Kaggle derives new notebook slugs from the title, even when an id is given.
+    metadata = {'id': 'arinabazukina/' + slug, 'title': slug.replace('-', ' '),
         'code_file': 'experiment.ipynb', 'language': 'python', 'kernel_type': 'notebook', 'is_private': True,
         'enable_gpu': True, 'enable_internet': True, 'dataset_sources': [], 'competition_sources': [],
         'kernel_sources': [args.resume_kernel] if args.resume_kernel else [],
