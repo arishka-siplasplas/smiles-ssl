@@ -30,7 +30,7 @@ def build(args):
                   'git_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
                   'source_hashes': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in files},
                   'mode': args.mode, 'session_hours': args.hours, 'resume_kernel': args.resume_kernel}
-    code = '''import os, sys, subprocess, json, base64, tarfile, io, hashlib, shutil, time
+    code = '''import os, sys, subprocess, json, base64, tarfile, io, hashlib, shutil, time, importlib.metadata
 from pathlib import Path
 session_started = time.time()
 os.environ.update(CUBLAS_WORKSPACE_CONFIG=':4096:8', OMP_NUM_THREADS='1',
@@ -49,6 +49,22 @@ subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', 'lightgbm==4.6.0',
 import torch, timm
 print('Torch:', torch.__version__, 'timm:', timm.__version__, 'CUDA devices:', torch.cuda.device_count(), flush=True)
 assert torch.cuda.device_count() == 2, 'Expected T4 x2, one independent worker per GPU'
+'''
+    if args.resume_kernel:
+        code += '''candidates = [p.parent for p in Path('/kaggle/input').rglob('status.json')
+              if (p.parent / 'config.json').exists() and (p.parent / 'manifest.json').exists()]
+assert len(candidates) == 1, f'Expected one source run, got {candidates}'
+resume_source = candidates[0]
+previous_environment = json.loads((resume_source / 'environment.json').read_text())
+current_packages = {p: importlib.metadata.version(p) for p in previous_environment['packages']}
+assert current_packages == previous_environment['packages'], (
+    'Resume package versions differ', previous_environment['packages'], current_packages)
+assert sys.version == previous_environment['python'], 'Resume Python version differs'
+assert torch.version.cuda == previous_environment['cuda'], 'Resume CUDA build differs'
+assert [torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())] == previous_environment['gpus'], 'Resume GPU types differ'
+print('RESUME_ENVIRONMENT_MATCH', json.dumps(current_packages), flush=True)
+'''
+    code += '''
 data = Path('/kaggle/temp/visa-original')
 subprocess.run([sys.executable, '-u', str(root / 'scripts/prepare_visa.py'),
     '--manifest', str(root / 'manifests/visa-v2/fixed.json'), '--output', str(data)], check=True)
@@ -69,10 +85,7 @@ shutil.copy2(data / 'image_hashes.json', output / 'image_hashes.json')
     else:
         code += f"command += ['--architecture', {args.mode!r}]\n"
     if args.resume_kernel:
-        code += '''candidates = [p.parent for p in Path('/kaggle/input').rglob('status.json')
-              if (p.parent / 'config.json').exists() and (p.parent / 'manifest.json').exists()]
-assert len(candidates) == 1, f'Expected one source run, got {candidates}'
-command += ['--resume', str(candidates[0])]
+        code += '''command += ['--resume', str(resume_source)]
 '''
     code += '''result = subprocess.run(command)
 print((output / 'status.json').read_text(), flush=True)

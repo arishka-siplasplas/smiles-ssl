@@ -1,0 +1,63 @@
+{
+  "checked_at_utc": "2026-10-31T08:42:52.251969+00:00",
+  "architectures": {
+    "resnet18": {
+      "url": "https://www.kaggle.com/code/arinabazukina/visa-ssl-v2-resnet18",
+      "status": "paused",
+      "counts": {
+        "complete": 53,
+        "paused": 1,
+        "pending": 108
+      },
+      "paused": [
+        {
+          "category": "pcb1",
+          "method": "masked_reconstruction",
+          "augmentation": "baseline",
+          "seed": 6103,
+          "last_epoch": 15
+        }
+      ],
+      "amp_skipped_steps": 0,
+      "training_epochs": 5315,
+      "quality_rows": 3318,
+      "all_expected_checkpoint_artifacts_present": true,
+      "training_source_config_manifest_unchanged": true,
+      "missing_rank_values": 0
+    },
+    "deit_tiny": {
+      "url": "https://www.kaggle.com/code/arinabazukina/visa-ssl-v2-deit-tiny",
+      "status": "paused",
+      "counts": {
+        "complete": 49,
+        "paused": 2,
+        "pending": 111
+      },
+      "paused": [
+        {
+          "category": "pcb1",
+          "method": "vicreg",
+          "augmentation": "baseline",
+          "seed": 6102,
+          "last_epoch": 47
+        },
+        {
+          "category": "pcb1",
+          "method": "vicreg",
+          "augmentation": "baseline",
+          "seed": 6103,
+          "last_epoch": 34
+        }
+      ],
+      "amp_skipped_steps": 0,
+      "training_epochs": 4981,
+      "quality_rows": 3132,
+      "all_expected_checkpoint_artifacts_present": true,
+      "training_source_config_manifest_unchanged": true,
+      "missing_rank_values": 0
+    }
+  },
+  "completed_ssl_runs": 102,
+  "total_ssl_runs": 324,
+  "remaining_ssl_runs": 222
+}

@@ -1,0 +1,1668 @@
+{
+  "protocol": "visa-duration-v2",
+  "architecture": "resnet18",
+  "preflight": false,
+  "deadline": 1793404938.7520747,
+  "baseline_jobs": [
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 15.013105676999999
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 15.012463441000023
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.004592000999992
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.004208854000012
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.005790036000008
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.005341625999904
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.004749433999905
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.00421148299995
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.010511368000039
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.00988152800005
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.004392724000013
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.004021822000027
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.004332334999958
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.00390060999996
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.00517223700001
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.004678499999955
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.00458139500006
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.004098576999922
+    }
+  ],
+  "train_jobs": [
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1230.7815900240003,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1257.79429182,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1212.8515555950003,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1197.8450416759997,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1227.911909987,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1224.9101769119998,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 801.6878028589999,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 819.7149097029996,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 858.722719415,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1155.9852984179997,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1158.9981604760005,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1156.0005436840001,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1165.072416776,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1165.129544180999,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1171.4142826070001,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 772.0031986680006,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 777.8425498279994,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 780.845910297001,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1135.2178630470007,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1129.2425923120009,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1129.2927241279995,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1126.327717958,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1111.3462250280008,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1120.318895249,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 750.916855124,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 750.9594724550007,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 750.9787133950013,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 2027.7253203910004,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 2021.7850195379997,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 2012.860637419999,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 2000.8712213390027,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1994.8719800030012,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 2006.9473309550012,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1309.9881813329994,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1315.9396235860004,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1288.9926453770022,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1322.0334137749996,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1337.0048260349977,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1349.1090867750027,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1328.1367045949992,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1331.1681495699995,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1334.239813371998,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 913.5227092129971,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 943.7096039160024,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 946.7636717249989,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 2067.7170267,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 2049.6117943319987,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 2052.808645549998,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 2055.9054969360004,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 2125.1544623089976,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 2122.198184384997,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1409.9039576659998,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1415.913633299002,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "paused",
+      "gpu": 0,
+      "exit_code": 75,
+      "wall_seconds": 288.59794071099896,
+      "last_epoch": 15,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "resnet18",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    }
+  ],
+  "status": "paused",
+  "stage": "ssl"
+}

@@ -1,0 +1,1650 @@
+{
+  "protocol": "visa-duration-v2",
+  "architecture": "deit_tiny",
+  "preflight": false,
+  "deadline": 1793404931.96352,
+  "baseline_jobs": [
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 12.01286975100004
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 12.01206227199998
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.004365882000002
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.003899826000008
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.005265535000035
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.004657579000025
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.004656222999984
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.004120462999992
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.005180763999988
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.004845853999996
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.005289661000006
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.004780715000038
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.004797957999926
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.004336119000072
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.005472161999933
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.005035335999992
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 9.004723954000042
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "baseline",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 9.00427971800002
+    }
+  ],
+  "train_jobs": [
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1320.875330201,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1350.8986242,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1326.959645662,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1302.9474569449999,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1321.06491327,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1318.065459248,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 927.761185546,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 933.7642583690003,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 879.7509820590003,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1189.0428949440002,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1231.1826243350006,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1243.2265039550002,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1201.1830836559993,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1183.1686272709994,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1171.155343028,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 765.7495655620005,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 804.9078029869997,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 813.9530515959996,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1213.4332075479997,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1210.4605210070004,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1216.5217760209998,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1201.4887222509988,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1198.4749140740005,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1189.4955018100009,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 799.0260945350001,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 799.0302976820003,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 814.1899717779997,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 2220.3659656910004,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 2205.3375610250005,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 2277.6062611359994,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 2331.8104067210006,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 2307.823217656998,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 2292.8097318930013,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1466.400627119001,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1454.3837107170002,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1472.4164935920016,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1442.4925738359998,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1436.4623666480002,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1454.5315746919987,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1439.591305463,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 1454.6694961419998,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 1463.711710779,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 985.7629415670017,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 985.8538384409985,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 985.8728579529998,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 2284.554703525999,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 2278.5848238020044,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 0,
+      "exit_code": 0,
+      "wall_seconds": 2287.6702528029964,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "complete",
+      "gpu": 1,
+      "exit_code": 0,
+      "wall_seconds": 2290.7450580789955,
+      "last_epoch": 100,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "paused",
+      "gpu": 0,
+      "exit_code": 75,
+      "wall_seconds": 1124.4202364489975,
+      "last_epoch": 47,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "baseline",
+      "status": "paused",
+      "gpu": 1,
+      "exit_code": 75,
+      "wall_seconds": 859.7590656910033,
+      "last_epoch": 34,
+      "amp_skipped_steps": 0
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "baseline"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "rotate"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "cashew",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "chewinggum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "fryum",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "candle",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "capsules",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "simclr",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "vicreg",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6101,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6102,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    },
+    {
+      "category": "pcb1",
+      "architecture": "deit_tiny",
+      "seed": 6103,
+      "method": "masked_reconstruction",
+      "augmentation": "cutpaste"
+    }
+  ],
+  "status": "paused",
+  "stage": "ssl"
+}
