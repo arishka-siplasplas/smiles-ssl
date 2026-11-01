@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-01T11:36:47.940661+00:00",
+  "checked_at_utc": "2026-11-01T11:47:48.877437+00:00",
   "block": 3,
   "account": "nepunep1",
   "cli_profile": "kaggle-second",
@@ -35,7 +35,7 @@
       "workers": 2,
       "target_ssl_jobs": 162,
       "expected_restored_jobs": 123,
-      "resume_training_verified": false,
+      "resume_training_verified": true,
       "snapshot": {
         "payload_sha256": "5a9b5c11bc0aa270ab12fc19273846963257d4c084ba8d918a79976cc672cddc",
         "git_commit": "7553403a8817f30f973d7b4de9529871ccfab805",
@@ -88,7 +88,18 @@
       "training_source_config_manifest_unchanged": true,
       "kaggle_status": "RUNNING",
       "api_last_run_time_utc": "2026-11-01T11:29:30.530000Z",
-      "observed_training": {},
+      "observed_training": {
+        "pcb1_resnet18_vicreg_a-rotate_s6102": {
+          "status": "training",
+          "epoch": 45,
+          "loss": 22.026414129868993
+        },
+        "pcb1_resnet18_vicreg_a-rotate_s6103": {
+          "status": "training",
+          "epoch": 38,
+          "loss": 22.085056758376787
+        }
+      },
       "archive_verification": {
         "source_kernel": "arinabazukina/visa-ssl-v2-resnet18-block-2",
         "file_count": 6010,
@@ -107,8 +118,24 @@
       "resume_environment_match": true,
       "official_images_sha256_verified": 4709,
       "restored_jobs": 123,
-      "last_heartbeat": "HEARTBEAT ssl remaining=160 failed=0 {\"cashew_resnet18_simclr_a-baseline_s6101\": {\"status\": \"training\", \"epoch\": 100, \"loss\": 3.438245243496365}, \"cashew_resnet18_simclr_a-baseline_s6102\": {\"status\": \"training\", \"epoch\": 100, \"loss\": 3.274121125539144}}",
-      "failed_jobs": 0
+      "last_heartbeat": "HEARTBEAT ssl remaining=57 failed=0 {\"pcb1_resnet18_vicreg_a-rotate_s6102\": {\"status\": \"training\", \"epoch\": 45, \"loss\": 22.026414129868993}, \"pcb1_resnet18_vicreg_a-rotate_s6103\": {\"status\": \"training\", \"epoch\": 38, \"loss\": 22.085056758376787}}",
+      "failed_jobs": 0,
+      "resumed_from_epochs": {
+        "pcb1_resnet18_vicreg_a-rotate_s6102": 43,
+        "pcb1_resnet18_vicreg_a-rotate_s6103": 37
+      },
+      "observed_active_jobs": {
+        "pcb1_resnet18_vicreg_a-rotate_s6102": {
+          "status": "training",
+          "epoch": 45,
+          "loss": 22.026414129868993
+        },
+        "pcb1_resnet18_vicreg_a-rotate_s6103": {
+          "status": "training",
+          "epoch": 38,
+          "loss": 22.085056758376787
+        }
+      }
     },
     {
       "architecture": "deit_tiny",
@@ -121,7 +148,7 @@
       "workers": 2,
       "target_ssl_jobs": 162,
       "expected_restored_jobs": 119,
-      "resume_training_verified": false,
+      "resume_training_verified": true,
       "snapshot": {
         "payload_sha256": "137b5d4e4242a8fbf49069a2908d9e04a2bba19688984abc0f0fd47dd2f4dbb6",
         "git_commit": "7553403a8817f30f973d7b4de9529871ccfab805",
@@ -174,7 +201,13 @@
       "training_source_config_manifest_unchanged": true,
       "kaggle_status": "RUNNING",
       "api_last_run_time_utc": "2026-11-01T11:31:40.070000Z",
-      "observed_training": {},
+      "observed_training": {
+        "pcb1_deit_tiny_simclr_a-rotate_s6102": {
+          "status": "training",
+          "epoch": 99,
+          "loss": 4.783906333851364
+        }
+      },
       "archive_verification": {
         "source_kernel": "arinabazukina/visa-ssl-v2-vit-tiny-block-2",
         "file_count": 5812,
@@ -193,12 +226,27 @@
       "resume_environment_match": true,
       "official_images_sha256_verified": 4709,
       "restored_jobs": 119,
-      "last_heartbeat": "HEARTBEAT ssl remaining=160 failed=0 {\"cashew_deit_tiny_simclr_a-baseline_s6101\": {\"status\": \"training\", \"epoch\": 100, \"loss\": 4.696490499708387}, \"cashew_deit_tiny_simclr_a-baseline_s6102\": {\"status\": \"training\", \"epoch\": 100, \"loss\": 4.6678146256340876}}",
-      "failed_jobs": 0
+      "last_heartbeat": "HEARTBEAT ssl remaining=60 failed=0 {\"pcb1_deit_tiny_simclr_a-rotate_s6102\": {\"status\": \"training\", \"epoch\": 99, \"loss\": 4.783906333851364}, \"pcb1_deit_tiny_simclr_a-rotate_s6103\": {\"status\": \"training\", \"epoch\": 1, \"loss\": 4.821438768674742}}",
+      "failed_jobs": 0,
+      "resumed_from_epochs": {
+        "pcb1_deit_tiny_simclr_a-rotate_s6102": 97
+      },
+      "observed_active_jobs": {
+        "pcb1_deit_tiny_simclr_a-rotate_s6102": {
+          "status": "training",
+          "epoch": 99,
+          "loss": 4.783906333851364
+        },
+        "pcb1_deit_tiny_simclr_a-rotate_s6103": {
+          "status": "training",
+          "epoch": 1,
+          "loss": 4.821438768674742
+        }
+      }
     }
   ],
-  "resume_verified": false,
+  "resume_verified": true,
   "checkpoint_payload_audit": "visa-v2-block3-checkpoint-transfer.json",
   "archives_and_runtime_verified": true,
-  "note": "Both cloud sessions passed archive, per-file, runtime and official-image verification and restored all expected job directories. Waiting for resumed epochs while previously completed jobs are skipped."
+  "note": "Both sessions are RUNNING on the second account. All three paused SSL jobs advanced beyond their saved epochs: ResNet 43 to 45 and 37 to 38; ViT 97 to 99. A new ViT seed 6103 run also reached epoch 1. Archive, per-file, runtime, official-image and full-checkpoint verification passed; no worker failures observed. Each session retains its 10-hour limit."
 }
