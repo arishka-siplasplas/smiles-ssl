@@ -1,0 +1,33 @@
+{
+  "checked_at_utc": "2026-11-01T11:33:33.169372+00:00",
+  "checks": [
+    {
+      "job": "pcb1_resnet18_vicreg_a-rotate_s6102",
+      "saved_epoch": 43,
+      "history_rows": 43,
+      "model_tensors_finite": true,
+      "optimizer_tensors_finite": true,
+      "optimizer_scaler_rng_present": true,
+      "sha256": "69ba757d6d3065671b58d8c50a2115fc5a2fba9d14781cb60456c40bf7e27f16"
+    },
+    {
+      "job": "pcb1_resnet18_vicreg_a-rotate_s6103",
+      "saved_epoch": 37,
+      "history_rows": 37,
+      "model_tensors_finite": true,
+      "optimizer_tensors_finite": true,
+      "optimizer_scaler_rng_present": true,
+      "sha256": "7d881c32206470bc02c91fd95ca59ec90ee29fd2aa2b221e41f5aad61ca742c1"
+    },
+    {
+      "job": "pcb1_deit_tiny_simclr_a-rotate_s6102",
+      "saved_epoch": 97,
+      "history_rows": 97,
+      "model_tensors_finite": true,
+      "optimizer_tensors_finite": true,
+      "optimizer_scaler_rng_present": true,
+      "sha256": "47c56cbb627d36d40b3bc06595939685de94011eabcf6daab924e56a5e860d8d"
+    }
+  ],
+  "note": "Trusted experiment-owned checkpoint dictionaries loaded on local CPU for transfer verification; cloud training uses the unchanged, separately checked original runtime."
+}
