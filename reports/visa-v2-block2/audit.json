@@ -1,0 +1,108 @@
+{
+  "checked_at_utc": "2026-11-01T11:03:04.621729+00:00",
+  "architectures": {
+    "resnet18": {
+      "url": "https://www.kaggle.com/code/arinabazukina/visa-ssl-v2-resnet18-block-2",
+      "kaggle_status": "COMPLETE",
+      "experiment_status": "paused",
+      "pause_reason": "time_limit",
+      "counts": {
+        "complete": 103,
+        "paused": 2,
+        "pending": 57
+      },
+      "by_augmentation": {
+        "baseline": {
+          "complete": 54
+        },
+        "rotate": {
+          "complete": 49,
+          "paused": 2,
+          "pending": 3
+        },
+        "cutpaste": {
+          "pending": 54
+        }
+      },
+      "paused": [
+        {
+          "category": "pcb1",
+          "method": "vicreg",
+          "augmentation": "rotate",
+          "seed": 6102,
+          "last_epoch": 43
+        },
+        {
+          "category": "pcb1",
+          "method": "vicreg",
+          "augmentation": "rotate",
+          "seed": 6103,
+          "last_epoch": 37
+        }
+      ],
+      "training_epochs": 10380,
+      "quality_rows": 6372,
+      "rank_rows": 6372,
+      "amp_skipped_steps": 0,
+      "all_expected_checkpoint_artifacts_present": true,
+      "fixed_evaluation_sample_counts_verified": true,
+      "training_source_config_manifest_unchanged": true,
+      "environment_matches_previous_block": true,
+      "previous_block_results_preserved": true,
+      "all_quality_rank_and_loss_values_finite": true
+    },
+    "deit_tiny": {
+      "url": "https://www.kaggle.com/code/arinabazukina/visa-ssl-v2-vit-tiny-block-2",
+      "kaggle_status": "COMPLETE",
+      "experiment_status": "paused",
+      "pause_reason": "time_limit",
+      "counts": {
+        "complete": 100,
+        "paused": 1,
+        "pending": 61
+      },
+      "by_augmentation": {
+        "baseline": {
+          "complete": 54
+        },
+        "rotate": {
+          "complete": 46,
+          "paused": 1,
+          "pending": 7
+        },
+        "cutpaste": {
+          "pending": 54
+        }
+      },
+      "paused": [
+        {
+          "category": "pcb1",
+          "method": "simclr",
+          "augmentation": "rotate",
+          "seed": 6102,
+          "last_epoch": 97
+        }
+      ],
+      "training_epochs": 10097,
+      "quality_rows": 6162,
+      "rank_rows": 6162,
+      "amp_skipped_steps": 0,
+      "all_expected_checkpoint_artifacts_present": true,
+      "fixed_evaluation_sample_counts_verified": true,
+      "training_source_config_manifest_unchanged": true,
+      "environment_matches_previous_block": true,
+      "previous_block_results_preserved": true,
+      "all_quality_rank_and_loss_values_finite": true
+    }
+  },
+  "completed_ssl_runs": 203,
+  "new_completed_in_block": 101,
+  "total_ssl_runs": 324,
+  "remaining_ssl_runs": 121,
+  "quota": {
+    "gpu_used_hours": 19.86,
+    "gpu_remaining_hours": 10.14,
+    "refresh_utc": "2026-11-07T00:00:00Z"
+  },
+  "artifact_verification": "Remote file inventory checked; model/embedding bytes not downloaded or reloaded in this audit."
+}
