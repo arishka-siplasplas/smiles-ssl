@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-02T12:31:10.154189+00:00",
+  "checked_at_utc": "2026-11-02T13:07:56.197744+00:00",
   "block": 4,
   "account": "nepunep1",
   "cli_profile": "kaggle-second",
@@ -43,7 +43,7 @@
         "pcb1_resnet18_simclr_a-cutpaste_s6101": 33,
         "pcb1_resnet18_simclr_a-cutpaste_s6102": 30
       },
-      "resume_training_verified": false,
+      "resume_training_verified": true,
       "snapshot": {
         "payload_sha256": "af7909e70435de12d21b96b2b672352214518d4cdfdfb34d5c0abf4805f5feab",
         "git_commit": "cda9a377165c396011a374d1ef53109ba69fc3ee",
@@ -101,7 +101,18 @@
         "machine_shape": "NvidiaTeslaT4"
       },
       "training_source_config_manifest_unchanged": true,
-      "observed_training": {},
+      "observed_training": {
+        "pcb1_resnet18_simclr_a-cutpaste_s6101": {
+          "status": "training",
+          "epoch": 35,
+          "loss": 4.215559514063709
+        },
+        "pcb1_resnet18_simclr_a-cutpaste_s6102": {
+          "status": "training",
+          "epoch": 31,
+          "loss": 4.22116884285549
+        }
+      },
       "environment_packages": {
         "torch": "2.11.0+cu128",
         "torchvision": "0.26.0+cu128",
@@ -113,7 +124,30 @@
         "Pillow": "13.0.0"
       },
       "resume_environment_match": true,
-      "official_images_sha256_verified": 4709
+      "official_images_sha256_verified": 4709,
+      "source_remote_metadata": {
+        "architecture": "resnet18",
+        "source_kernel": "nepunep1/visa-ssl-v2-resnet18-block-3",
+        "docker_image": "gcr.io/kaggle-private-byod/python@sha256:9a6bcfda6d03b2cd9aa347ee8c1bae62043328ed0f4afe9bda014e4f8bbf9435",
+        "machine_shape": "NvidiaTeslaT4",
+        "is_private": true
+      },
+      "remote_image_matches_previous_block": true,
+      "restored_jobs": 173,
+      "last_heartbeat": "HEARTBEAT ssl remaining=7 failed=0 {\"pcb1_resnet18_simclr_a-cutpaste_s6101\": {\"status\": \"training\", \"epoch\": 35, \"loss\": 4.215559514063709}, \"pcb1_resnet18_simclr_a-cutpaste_s6102\": {\"status\": \"training\", \"epoch\": 31, \"loss\": 4.22116884285549}}",
+      "failed_jobs": 0,
+      "observed_active_jobs": {
+        "pcb1_resnet18_simclr_a-cutpaste_s6101": {
+          "status": "training",
+          "epoch": 35,
+          "loss": 4.215559514063709
+        },
+        "pcb1_resnet18_simclr_a-cutpaste_s6102": {
+          "status": "training",
+          "epoch": 31,
+          "loss": 4.22116884285549
+        }
+      }
     },
     {
       "architecture": "deit_tiny",
@@ -133,7 +167,7 @@
         "capsules_deit_tiny_simclr_a-cutpaste_s6101": 88,
         "capsules_deit_tiny_simclr_a-cutpaste_s6102": 16
       },
-      "resume_training_verified": false,
+      "resume_training_verified": true,
       "snapshot": {
         "payload_sha256": "af7909e70435de12d21b96b2b672352214518d4cdfdfb34d5c0abf4805f5feab",
         "git_commit": "cda9a377165c396011a374d1ef53109ba69fc3ee",
@@ -191,7 +225,24 @@
         "machine_shape": "NvidiaTeslaT4"
       },
       "training_source_config_manifest_unchanged": true,
-      "observed_training": {},
+      "observed_training": {
+        "capsules_deit_tiny_simclr_a-cutpaste_s6101": {
+          "status": "completed",
+          "epoch": 100,
+          "samples": 337,
+          "seconds": 14.945656135000263,
+          "optimizer_steps": 6,
+          "amp_skipped_steps": 0,
+          "learning_rate": 0.001,
+          "loss": 4.707608290171411,
+          "nt_xent": 4.707608290171411
+        },
+        "capsules_deit_tiny_simclr_a-cutpaste_s6102": {
+          "status": "training",
+          "epoch": 35,
+          "loss": 4.775467238015874
+        }
+      },
       "environment_packages": {
         "torch": "2.11.0+cu128",
         "torchvision": "0.26.0+cu128",
@@ -203,16 +254,40 @@
         "Pillow": "13.0.0"
       },
       "resume_environment_match": true,
-      "official_images_sha256_verified": 4709
+      "official_images_sha256_verified": 4709,
+      "source_remote_metadata": {
+        "architecture": "deit_tiny",
+        "source_kernel": "nepunep1/visa-ssl-v2-vit-tiny-block-3",
+        "docker_image": "gcr.io/kaggle-private-byod/python@sha256:9a6bcfda6d03b2cd9aa347ee8c1bae62043328ed0f4afe9bda014e4f8bbf9435",
+        "machine_shape": "NvidiaTeslaT4",
+        "is_private": true
+      },
+      "remote_image_matches_previous_block": true,
+      "restored_jobs": 164,
+      "last_heartbeat": "HEARTBEAT ssl remaining=15 failed=0 {\"capsules_deit_tiny_simclr_a-cutpaste_s6102\": {\"status\": \"training\", \"epoch\": 35, \"loss\": 4.775467238015874}, \"capsules_deit_tiny_simclr_a-cutpaste_s6103\": {\"status\": \"training\", \"epoch\": 5, \"loss\": 4.785129603717023}}",
+      "failed_jobs": 0,
+      "observed_active_jobs": {
+        "capsules_deit_tiny_simclr_a-cutpaste_s6102": {
+          "status": "training",
+          "epoch": 35,
+          "loss": 4.775467238015874
+        },
+        "capsules_deit_tiny_simclr_a-cutpaste_s6103": {
+          "status": "training",
+          "epoch": 5,
+          "loss": 4.785129603717023
+        }
+      }
     }
   ],
-  "resume_verified": false,
-  "note": "Both private notebooks are RUNNING. Uploaded code and source notebook references verified. Python, CUDA, GPU types and package versions match previous sessions; all 4709 official images passed SHA-256 checks. Waiting for restored checkpoint epochs. No training/config/manifest changes.",
+  "resume_verified": true,
+  "note": "Both sessions resumed SSL from their saved checkpoints: ResNet 33 → 35, 30 → 31; ViT 88 → 100, 16 → 35. All four checkpoints advanced; no worker failures observed. The 3.5h/5.5h limits and original experiment protocol remain unchanged.",
   "quota_after_launch": {
     "checked_at_utc": "2026-11-02T12:30:08.604116+00:00",
     "used_hours": 20.020507701944442,
     "reserved_hours": 11.922426009999999,
     "total_hours": 30.0,
     "refresh_utc": "2026-11-07T00:00:00"
-  }
+  },
+  "restored_job_directories_verified": true
 }
