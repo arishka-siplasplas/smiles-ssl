@@ -1,0 +1,341 @@
+{
+  "checked_at_utc": "2026-11-02T11:46:24.170472+00:00",
+  "architectures": {
+    "resnet18": {
+      "url": "https://www.kaggle.com/code/nepunep1/visa-ssl-v2-resnet18-block-3",
+      "kaggle_status": "COMPLETE",
+      "experiment_status": "paused",
+      "pause_reason": "time_limit",
+      "counts": {
+        "complete": 153,
+        "paused": 2,
+        "pending": 7
+      },
+      "by_augmentation": {
+        "baseline": {
+          "complete": 54
+        },
+        "rotate": {
+          "complete": 54
+        },
+        "cutpaste": {
+          "complete": 45,
+          "paused": 2,
+          "pending": 7
+        }
+      },
+      "paused": [
+        {
+          "category": "pcb1",
+          "method": "simclr",
+          "augmentation": "cutpaste",
+          "seed": 6101,
+          "last_epoch": 33
+        },
+        {
+          "category": "pcb1",
+          "method": "simclr",
+          "augmentation": "cutpaste",
+          "seed": 6102,
+          "last_epoch": 30
+        }
+      ],
+      "remaining_jobs": [
+        {
+          "category": "pcb1",
+          "method": "simclr",
+          "augmentation": "cutpaste",
+          "seed": 6101,
+          "status": "paused",
+          "last_epoch": 33
+        },
+        {
+          "category": "pcb1",
+          "method": "simclr",
+          "augmentation": "cutpaste",
+          "seed": 6102,
+          "status": "paused",
+          "last_epoch": 30
+        },
+        {
+          "category": "pcb1",
+          "method": "simclr",
+          "augmentation": "cutpaste",
+          "seed": 6103,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "vicreg",
+          "augmentation": "cutpaste",
+          "seed": 6101,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "vicreg",
+          "augmentation": "cutpaste",
+          "seed": 6102,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "vicreg",
+          "augmentation": "cutpaste",
+          "seed": 6103,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "masked_reconstruction",
+          "augmentation": "cutpaste",
+          "seed": 6101,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "masked_reconstruction",
+          "augmentation": "cutpaste",
+          "seed": 6102,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "masked_reconstruction",
+          "augmentation": "cutpaste",
+          "seed": 6103,
+          "status": "pending",
+          "last_epoch": 0
+        }
+      ],
+      "training_epochs": 15363,
+      "quality_rows": 9372,
+      "rank_rows": 9372,
+      "amp_skipped_steps": 0,
+      "all_expected_checkpoint_artifacts_present": true,
+      "fixed_evaluation_sample_counts_verified": true,
+      "training_source_config_manifest_unchanged": true,
+      "environment_matches_previous_block": true,
+      "previous_block_results_preserved": true,
+      "all_quality_rank_and_loss_values_finite": true
+    },
+    "deit_tiny": {
+      "url": "https://www.kaggle.com/code/nepunep1/visa-ssl-v2-vit-tiny-block-3",
+      "kaggle_status": "COMPLETE",
+      "experiment_status": "paused",
+      "pause_reason": "time_limit",
+      "counts": {
+        "complete": 144,
+        "paused": 2,
+        "pending": 16
+      },
+      "by_augmentation": {
+        "baseline": {
+          "complete": 54
+        },
+        "rotate": {
+          "complete": 54
+        },
+        "cutpaste": {
+          "complete": 36,
+          "paused": 2,
+          "pending": 16
+        }
+      },
+      "paused": [
+        {
+          "category": "capsules",
+          "method": "simclr",
+          "augmentation": "cutpaste",
+          "seed": 6101,
+          "last_epoch": 88
+        },
+        {
+          "category": "capsules",
+          "method": "simclr",
+          "augmentation": "cutpaste",
+          "seed": 6102,
+          "last_epoch": 16
+        }
+      ],
+      "remaining_jobs": [
+        {
+          "category": "capsules",
+          "method": "simclr",
+          "augmentation": "cutpaste",
+          "seed": 6101,
+          "status": "paused",
+          "last_epoch": 88
+        },
+        {
+          "category": "capsules",
+          "method": "simclr",
+          "augmentation": "cutpaste",
+          "seed": 6102,
+          "status": "paused",
+          "last_epoch": 16
+        },
+        {
+          "category": "capsules",
+          "method": "simclr",
+          "augmentation": "cutpaste",
+          "seed": 6103,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "capsules",
+          "method": "vicreg",
+          "augmentation": "cutpaste",
+          "seed": 6101,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "capsules",
+          "method": "vicreg",
+          "augmentation": "cutpaste",
+          "seed": 6102,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "capsules",
+          "method": "vicreg",
+          "augmentation": "cutpaste",
+          "seed": 6103,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "capsules",
+          "method": "masked_reconstruction",
+          "augmentation": "cutpaste",
+          "seed": 6101,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "capsules",
+          "method": "masked_reconstruction",
+          "augmentation": "cutpaste",
+          "seed": 6102,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "capsules",
+          "method": "masked_reconstruction",
+          "augmentation": "cutpaste",
+          "seed": 6103,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "simclr",
+          "augmentation": "cutpaste",
+          "seed": 6101,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "simclr",
+          "augmentation": "cutpaste",
+          "seed": 6102,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "simclr",
+          "augmentation": "cutpaste",
+          "seed": 6103,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "vicreg",
+          "augmentation": "cutpaste",
+          "seed": 6101,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "vicreg",
+          "augmentation": "cutpaste",
+          "seed": 6102,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "vicreg",
+          "augmentation": "cutpaste",
+          "seed": 6103,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "masked_reconstruction",
+          "augmentation": "cutpaste",
+          "seed": 6101,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "masked_reconstruction",
+          "augmentation": "cutpaste",
+          "seed": 6102,
+          "status": "pending",
+          "last_epoch": 0
+        },
+        {
+          "category": "pcb1",
+          "method": "masked_reconstruction",
+          "augmentation": "cutpaste",
+          "seed": 6103,
+          "status": "pending",
+          "last_epoch": 0
+        }
+      ],
+      "training_epochs": 14504,
+      "quality_rows": 8832,
+      "rank_rows": 8832,
+      "amp_skipped_steps": 0,
+      "all_expected_checkpoint_artifacts_present": true,
+      "fixed_evaluation_sample_counts_verified": true,
+      "training_source_config_manifest_unchanged": true,
+      "environment_matches_previous_block": true,
+      "previous_block_results_preserved": true,
+      "all_quality_rank_and_loss_values_finite": true
+    }
+  },
+  "completed_ssl_runs": 297,
+  "new_completed_in_block": 94,
+  "total_ssl_runs": 324,
+  "remaining_ssl_runs": 27,
+  "quota": {
+    "gpu_used_hours": 19.86219416666667,
+    "gpu_remaining_hours": 10.137805833333333,
+    "gpu_reserved_hours": 0.0,
+    "refresh_utc": "2026-11-07T00:00:00",
+    "account": "nepunep1"
+  },
+  "artifact_verification": "Remote file inventory checked; model/embedding bytes not downloaded or reloaded in this audit.",
+  "completed_baseline_runs": 36,
+  "remaining_training_epochs": 2533,
+  "remaining_runtime_estimate": "remaining-runtime-estimate.json",
+  "new_training_submitted": false
+}
