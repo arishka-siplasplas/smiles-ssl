@@ -1,0 +1,33 @@
+{
+  "payload_sha256": "af7909e70435de12d21b96b2b672352214518d4cdfdfb34d5c0abf4805f5feab",
+  "git_commit": "cda9a377165c396011a374d1ef53109ba69fc3ee",
+  "source_hashes": {
+    "configs/visa/expanded.json": "fe15a7906b8bb6be43f732efbb32c3a87c680860ceec5f8d3f22f401e367c9c4",
+    "docs/VISA_EXPANDED_PLAN_RU.md": "c2dcf0dd2da4b4f3c32829ae2eae79f07ca20d58a7727455627e2510236f47cd",
+    "docs/VISA_PROTOCOL_RU.md": "0de0adab3c377f16ca5d5a0161bec92f81c0162996192f9ecf7f4d6e0e2a352d",
+    "manifests/visa/2cls_highshot.csv": "c3331eede15f2da8a75b380d4fbfb24f75ee036ec9a25147eca898da6e972f09",
+    "manifests/visa/LICENSE-DATASET": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+    "manifests/visa/LICENSE-UPSTREAM": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "manifests/visa-v2/fixed.json": "d14e37ffd66b2203ba53668e51739246c22e8b9917adfeb56c5551f613632d02",
+    "manifests/visa-v2/image_hashes.json": "00abe7baecca0b2deff3f42fd3d7b1b91c748c59b111f5506ab53f99675b0656",
+    "manifests/visa-v2/sources.json": "c295de6089a604b399e1908a6e709c5ab010d896394696114a89f6772c5af561",
+    "scripts/prepare_visa.py": "e3976cd98c33d8c5b4b2a24dbb7676a82cd41cb0abb256887e3adeabfe54e055",
+    "src/visa_ssl/__init__.py": "6132bdcffe7e784de06b579f98d9eb8d57b5a4f8e50e9e7bac5ccd0242261ac4",
+    "src/visa_ssl/analyze.py": "3d2e3b62445d89f74a0e4a41a5c6276b025ae4fb5f8e575e5e7daa7b9f70c163",
+    "src/visa_ssl/analyze_expanded.py": "b7e71303e251574f132839f815e975050ca98b56f4b9ba2f2d297fbea158b180",
+    "src/visa_ssl/data.py": "d36655d98faff4c5a4185f5b0bb138c1ac115f84007c7f062c5d40e04c3ebb3b",
+    "src/visa_ssl/expanded.py": "ff673618f43969cc597039bfed180fc15828cf20b275ff76eee15005ec6292ab",
+    "src/visa_ssl/launch.py": "d47a93f62b9ea87bf42c96fac54c31fde364773bb95a32102a6553ad097b7ce0",
+    "src/visa_ssl/metrics.py": "00d951823a3d2f30a6d0daaa6b705e1e59235480dce2b121174d01b84a4acf60",
+    "src/visa_ssl/models.py": "c4ec26a7e4d8147f1bd825272a205cb773eb95b7eba3f57b0c45badde1adf996",
+    "src/visa_ssl/probes.py": "c48c32d1896df012e142742acdd6e00ef3983a918e0c92646e08e914c96b1cc6",
+    "src/visa_ssl/run.py": "f0800c5b5d90bf1144818f4b512610e6f745157ffde46379908ab3e3a02f9377",
+    "tests/test_visa_expanded.py": "9761708d423333feb1a0bd1471e9bdea1040f59f311ea5380a05598b8056984b"
+  },
+  "mode": "resnet18",
+  "session_hours": 3.5,
+  "resume_kernel": "nepunep1/visa-ssl-v2-resnet18-block-3",
+  "resume_dataset": null,
+  "resume_archive_sha256": null,
+  "resume_origin_kernel": null
+}

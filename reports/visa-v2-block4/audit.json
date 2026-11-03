@@ -1,0 +1,88 @@
+{
+  "checked_at_utc": "2026-11-03T15:11:22.188988+00:00",
+  "architectures": {
+    "resnet18": {
+      "url": "https://www.kaggle.com/code/nepunep1/visa-ssl-v2-resnet18-block-4",
+      "kaggle_status": "COMPLETE",
+      "experiment_status": "complete",
+      "pause_reason": null,
+      "counts": {
+        "complete": 162
+      },
+      "by_augmentation": {
+        "baseline": {
+          "complete": 54
+        },
+        "rotate": {
+          "complete": 54
+        },
+        "cutpaste": {
+          "complete": 54
+        }
+      },
+      "paused": [],
+      "remaining_jobs": [],
+      "training_epochs": 16200,
+      "quality_rows": 9828,
+      "rank_rows": 9828,
+      "amp_skipped_steps": 0,
+      "all_expected_checkpoint_artifacts_present": true,
+      "fixed_evaluation_sample_counts_verified": true,
+      "training_source_config_manifest_unchanged": true,
+      "environment_matches_previous_block": true,
+      "previous_block_results_preserved": true,
+      "all_quality_rank_and_loss_values_finite": true
+    },
+    "deit_tiny": {
+      "url": "https://www.kaggle.com/code/nepunep1/visa-ssl-v2-vit-tiny-block-4",
+      "kaggle_status": "COMPLETE",
+      "experiment_status": "complete",
+      "pause_reason": null,
+      "counts": {
+        "complete": 162
+      },
+      "by_augmentation": {
+        "baseline": {
+          "complete": 54
+        },
+        "rotate": {
+          "complete": 54
+        },
+        "cutpaste": {
+          "complete": 54
+        }
+      },
+      "paused": [],
+      "remaining_jobs": [],
+      "training_epochs": 16200,
+      "quality_rows": 9828,
+      "rank_rows": 9828,
+      "amp_skipped_steps": 0,
+      "all_expected_checkpoint_artifacts_present": true,
+      "fixed_evaluation_sample_counts_verified": true,
+      "training_source_config_manifest_unchanged": true,
+      "environment_matches_previous_block": true,
+      "previous_block_results_preserved": true,
+      "all_quality_rank_and_loss_values_finite": true
+    }
+  },
+  "completed_ssl_runs": 324,
+  "new_completed_in_block": 27,
+  "total_ssl_runs": 324,
+  "remaining_ssl_runs": 0,
+  "completed_baseline_runs": 36,
+  "all_planned_ssl_job_identities_verified": true,
+  "quota": {
+    "gpu_used_hours": 28.509183055555553,
+    "gpu_remaining_hours": 1.4908169444444443,
+    "gpu_reserved_hours": 0.0,
+    "refresh_utc": "2026-11-07T00:00:00",
+    "account": "nepunep1"
+  },
+  "artifact_verification": "Remote file inventory checked; model/embedding bytes not downloaded or reloaded in this audit.",
+  "all_training_complete": true,
+  "total_training_epochs": 32400,
+  "total_quality_rows": 19656,
+  "total_rank_rows": 19656,
+  "additional_training_needed": false
+}
