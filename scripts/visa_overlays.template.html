@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VisA · downstream-качество и ранговая метрика</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f4f1;color:#272724;font:16px/1.5 system-ui,sans-serif}
+main{max-width:1120px;margin:auto;padding:32px 24px 48px}h1{font-size:32px;line-height:1.2;font-weight:650;margin:10px 0 14px}
+p{max-width:960px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#85694e}
+.muted{color:#62635e;font-size:14px}.controls{display:flex;flex-wrap:wrap;gap:14px 20px;background:white;padding:22px;border:1px solid #deded7;border-radius:12px}
+label{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:650}select{font:14px system-ui;padding:10px 12px;border:1px solid #c9cbc3;border-radius:6px;background:white;color:#272724}
+.plot{margin-top:20px;background:white;border:1px solid #deded7;border-radius:12px;overflow:hidden}.plot img{display:block;width:100%;height:auto}
+.links{display:flex;gap:18px;flex-wrap:wrap;margin:16px 0}a{color:#875019;text-decoration:none;font-weight:600;font-size:14px}a:hover{text-decoration:underline}
+.note{border-left:3px solid #ed8427;padding-left:16px}.legend{display:flex;gap:24px;font-size:14px;margin:20px 0}.legend span:before{content:'';display:inline-block;width:26px;height:3px;margin:0 8px 4px 0;background:#252525}.legend span:last-child:before{background:#ed8427}
+details{padding:16px 0;border-top:1px solid #deded7}summary{cursor:pointer;font-weight:600}.status{min-height:42px}
+@media(max-width:640px){main{padding:22px 12px}h1{font-size:26px}.controls{padding:14px;gap:12px}label{flex:1 1 42%}select{max-width:100%}}
+</style>
+<main>
+<div class="eyebrow">VisA · Kaggle · дополнение к графикам по эпохам</div>
+<h1>Downstream-качество и ранг на одном графике</h1>
+<p>Как в примере: чёрная линия показывает качество, оранжевая — выбранную ранговую метрику.
+Строки — три SSL-метода, столбцы — precision аномального класса и ROC-AUC.</p>
+<p class="muted">Последняя завершённая серия: 54 SSL-запуска, 3 seed, эпохи 0 / 1 / 2 / 5 / 10 / 20 / 30.
+Каждая линия — среднее по seed. Точки соединены прямыми отрезками без сглаживания.</p>
+<p class="muted">Автономный отчёт: все 192 графика и таблицы встроены в этот HTML. Можно переслать один файл и открыть его в браузере без интернета.</p>
+<div class="controls">
+<label>Категория<select id="category"><option>cashew</option><option>chewinggum</option><option selected>fryum</option></select></label>
+<label>Аномалии в SSL-train<select id="fraction"><option value="0.05">5%</option><option value="0.20">20%</option></select></label>
+<label>Классификатор<select id="classifier"><option value="logistic_regression">Logistic regression</option><option value="lightgbm">LightGBM</option></select></label>
+<label>Ранговая метрика<select id="rank"><option>RankMe</option><option>CER</option><option>CovER</option><option>NESum</option></select></label>
+<label>Эмбеддинги для ранга<select id="norm"><option value="raw">Raw</option><option value="l2">L2</option></select></label>
+<label>Шкала<select id="scale"><option value="minmax">0–1 · форма кривых</option><option value="native">Исходные значения ± SD</option></select></label>
+</div>
+<p id="explanation" class="muted status" aria-live="polite">Загружаются встроенные графики…</p>
+<div class="plot"><img id="figure" src="__DEFAULT_IMAGE__" width="1696" height="1904" alt="VisA, fryum, 5% аномалий: precision и ROC-AUC вместе с RankMe"></div>
+<div class="links"><a id="png" download>Скачать этот график · PNG</a><a id="svg" download>SVG · векторный</a></div>
+<p class="note">Вид 0–1 сравнивает <b>форму</b> траекторий: сначала берётся среднее по трём seed,
+затем каждая линия отдельно преобразуется по формуле (значение − минимум) / (максимум − минимум)
+за все семь checkpoint. Направление кривых сохраняется. Высота и расстояние между линиями
+не показывают равенство исходных значений или силу связи.</p>
+<details><summary>Что именно измеряется</summary>
+<p>Обе линии рассчитаны на фиксированном официальном test выбранной категории. Epoch 0 — необученный ResNet-18.
+Классификаторы переобучались на замороженных признаках на каждой оценочной эпохе. Их параметры и порог
+выбирались только на validation; новых подборов параметров для этих графиков нет.</p>
+<p>Precision относится к аномальному классу. Порог выбран при validation recall ≥ 0.5, но это ограничение
+не гарантировано на test. ROC-AUC не зависит от выбранного порога.</p>
+<p>Raw/L2 меняет только расчёт рангов. Оба классификатора используют raw-признаки.
+В режиме исходных значений серая и оранжевая полосы — ± выборочное стандартное отклонение по трём seed,
+а не доверительный интервал. У качества левая ось, у ранга — правая; шкала ранга общая для всех шести панелей.</p>
+<p>RankMe, CER, CovER и NESum используют определения исходного эксперимента.
+Min–max для отрисовки — отдельное преобразование, не L2-нормировка эмбеддингов.</p></details>
+<details><summary>Данные и воспроизведение</summary>
+<div class="links"><a href="paired_test_values.csv">Исходные пары по seed · CSV</a><a href="mean_sd.csv">Среднее и SD · CSV</a>
+<a href="minmax_bounds.csv">Границы нормировки · CSV</a><a href="audit.json">Проверка данных · JSON</a><a href="reproduction.zip">Скрипты построения · ZIP</a></div>
+<p class="muted">Проверены хеши исходных результатов, полнота условий и seed, отсутствие дубликатов и точное
+совмещение рангов с качеством по категории, методу, доле аномалий, seed и эпохе. Предыдущий отчёт сохранён без изменений.</p>
+</details>
+</main>
+<script>
+let plots;
+const el=id=>document.getElementById(id);
+const controls=['category','fraction','norm','classifier','rank','scale'];
+function selectedPlot(){return plots[controls.map(id=>el(id).value).join('|')];}
+function update(){
+ if(!plots)return;
+ const values=controls.map(id=>el(id).value);
+ const plot=plots[values.join('|')];
+ el('figure').src=plot.image;
+ el('figure').alt=`${values[0]}, ${Number(values[1])*100}% аномалий, ${values[3]}: precision и ROC-AUC вместе с ${values[4]}, ${values[2]}.`;
+ el('svg').href=plot.image;el('svg').download=plot.stem+'.svg';
+ el('png').href='#';el('png').download=plot.stem+'.png';
+ el('explanation').textContent=values[5]==='minmax'
+  ? 'Средние линии приведены к 0–1 отдельно для каждой траектории. Разброс по seed доступен в режиме исходных значений.'
+  : 'Исходные значения: качество слева (чёрная ось), ранг справа (оранжевая ось). Полосы — ± SD по 3 seed.';
+}
+controls.forEach(id=>{el(id).disabled=true;el(id).addEventListener('change',update);});
+el('png').addEventListener('click',async event=>{
+ event.preventDefault();if(!plots)return;
+ const plot=selectedPlot(),img=new Image();img.src=plot.image;
+ try{
+  await img.decode();
+  const canvas=document.createElement('canvas');canvas.width=1696;canvas.height=1904;
+  const ctx=canvas.getContext('2d');ctx.fillStyle='white';ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.drawImage(img,0,0,canvas.width,canvas.height);
+  const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));
+  if(!blob)throw new Error('PNG export failed');
+  const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=plot.stem+'.png';
+  document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);
+ }catch(error){el('explanation').textContent='Не удалось экспортировать PNG. Скачайте векторный SVG по соседней ссылке.';}
+});
+async function initialize(){
+ try{
+  const compressed=Uint8Array.from(atob('__PLOTS_GZIP__'),char=>char.charCodeAt(0));
+  const stream=new Blob([compressed]).stream().pipeThrough(new DecompressionStream('gzip'));
+  plots=JSON.parse(await new Response(stream).text());
+  controls.forEach(id=>el(id).disabled=false);update();
+ }catch(error){el('explanation').textContent='Откройте этот HTML в актуальной версии Safari, Chrome, Edge или Firefox. Все данные уже внутри файла; интернет не требуется.';}
+}
+initialize();
+</script>
+</html>

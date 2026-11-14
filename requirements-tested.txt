@@ -10,3 +10,4 @@ matplotlib==3.10.9
 pytest==9.1.1
 joblib==1.5.3
 threadpoolctl==3.6.0
+statsmodels==0.14.6

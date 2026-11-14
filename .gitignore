@@ -17,3 +17,9 @@ tmp/
 kaggle/bundle/
 kaggle/bundles/
 reports/visa-duration-v1.zip
+
+# Generated reports, exports and share bundles.
+/reports/
+/outputs/
+*.zip
+/scripts/visa_overlays.html

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VisA v2 · два завершённых прогона</title>
+<style>
+:root{--ink:#252525;--orange:#ed8427;--muted:#686961;--line:#deded6;--paper:#fff;--back:#f4f4f0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--back);color:var(--ink);font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:1280px;margin:auto;padding:38px 28px 64px}h1,h2,h3{line-height:1.2;font-weight:650;letter-spacing:-.025em}h1{font-size:clamp(32px,4.5vw,52px);max-width:980px;margin:10px 0 18px}h2{font-size:28px;margin:0 0 18px}h3{font-size:20px;margin:22px 0 12px}p{margin:10px 0 16px}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:750;color:#866449}.lead{max-width:960px;font-size:19px;color:#505149}.muted,.small{color:var(--muted);font-size:14px}.intro{max-width:1040px}nav{display:flex;gap:10px 24px;flex-wrap:wrap;padding:18px 0 22px;border-bottom:1px solid var(--line);margin-bottom:30px}a{color:#89501d;text-decoration:none}a:hover{text-decoration:underline}nav a{font-size:14px;font-weight:650}section{scroll-margin-top:22px;margin:32px 0 48px}.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:24px}.controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 20px}.controls label{font-size:12px;line-height:1.35;font-weight:650;display:flex;flex-direction:column;gap:7px}select,button{font:14px system-ui;color:var(--ink);border:1px solid #c8cbc1;border-radius:6px;background:white;padding:10px 12px}select{width:100%;min-width:0}select:focus,button:focus,a:focus{outline:2px solid var(--orange);outline-offset:3px}button{cursor:pointer;font-weight:600}button:hover{background:#f8f6f2}.toolbar{display:flex;align-items:center;gap:10px 20px;flex-wrap:wrap;margin:16px 0}.legend{display:flex;gap:20px;flex-wrap:wrap;font-size:14px;margin-right:auto}.legend span{display:inline-flex;align-items:center;gap:8px}.legend i{display:inline-block;position:relative;width:25px;height:2px;background:var(--ink)}.legend i:after{content:"";position:absolute;width:7px;height:7px;left:9px;top:-2.5px;background:var(--ink)}.legend .orange i,.legend .orange i:after{background:var(--orange)}.legend .orange i:after{border-radius:50%}.plot{overflow:hidden;padding:0;border-radius:12px;border:1px solid var(--line);background:white}.plot svg{width:100%;height:auto;display:block}.status{min-height:42px;max-width:1160px}.note{padding:14px 18px;border-left:3px solid var(--orange);background:#fcf8f2;font-size:14px}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}th,td{padding:9px 12px;text-align:right;border-bottom:1px solid #e4e4dd;white-space:nowrap}th{text-align:right;font-weight:650;background:#f6f6f1}th:first-child,td:first-child{text-align:left}thead{color:#585a51}td.positive{color:#266847}td.negative{color:#a14329}details{border-top:1px solid var(--line);padding:14px 0;margin-top:16px}summary{cursor:pointer;font-weight:650}.summary-grid,.figures{display:grid;gap:22px}.summary-grid img,.figures img,figure img,#summary img{max-width:100%;height:auto;display:block;margin:auto}figure{margin:24px 0}figcaption{font-size:14px;color:var(--muted);margin-top:10px}.metric-cards,.stats{display:flex;flex-wrap:wrap;gap:14px;margin:24px 0}.metric-cards>*,.stats>*{flex:1 1 180px;border:1px solid var(--line);border-radius:10px;padding:18px;background:white}.findings li{margin:10px 0}.downloads{display:flex;gap:12px 22px;flex-wrap:wrap}.downloads a{font-weight:600;font-size:14px}.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.method-grid p{font-size:14px}.method-grid h3{margin-top:0}.foot{border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:13px}code{font-size:.9em;background:#ecece6;border-radius:3px;padding:1px 4px}#export-status{font-size:13px;color:var(--muted)}
+@media(max-width:800px){main{padding:24px 14px 48px}.controls{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.card{padding:17px}.method-grid{grid-template-columns:1fr}h2{font-size:24px}.plot{overflow-x:auto}.plot svg{min-width:750px}.toolbar{gap:10px}.lead{font-size:17px}th,td{padding:8px}.legend{width:100%}}
+@media print{body{background:white}main{max-width:none;padding:0}nav,.controls,.toolbar button,#export-status{display:none}section{break-inside:avoid}.plot svg{min-width:0}.card{border:0;padding:0}a{color:inherit}.plot{border:0}}
+</style>
+</head>
+<body><main>
+<header>
+<div class="eyebrow">VisA · visa-duration-v2 · результаты на 4 ноября 2026</div>
+<h1>Две архитектуры, 100 эпох:<br>качество и геометрия представлений</h1>
+<p class="lead">Завершённые серии ResNet-18 и ViT-Tiny/16: 324 SSL-запуска, шесть категорий, три метода, три режима аугментации и три seed.</p>
+<p class="intro muted">Чёрная линия показывает downstream-качество, оранжевая — ранговую метрику. Все точки соединены прямыми отрезками без сглаживания. Отчёт работает без интернета: данные, графики и таблицы находятся внутри этого файла.</p>
+</header>
+<nav aria-label="Разделы отчёта"><a href="#findings">Выводы</a><a href="#explorer">Динамика по эпохам</a><a href="#summary">Сводные графики</a><a href="#method">Методика</a><a href="#data">Данные и проверка</a></nav>
+<section id="findings" class="findings"><h2>Что показали прогоны</h2>__FINDINGS__</section>
+<section id="explorer">
+<h2>Качество и ранг на одном графике</h2>
+<p class="muted">Строки — SSL-методы; столбцы — две метрики качества. Выберите условия, затем сопоставьте форму кривых или откройте исходные значения с разбросом по seed.</p>
+<div class="controls card">
+<label>Категория<select id="category"><option>cashew</option><option>chewinggum</option><option selected>fryum</option><option>candle</option><option>capsules</option><option>pcb1</option></select></label>
+<label>Архитектура<select id="architecture"><option value="resnet18">ResNet-18 · D=512</option><option value="deit_tiny">ViT-Tiny/16 · D=192</option></select></label>
+<label>Аугментации<select id="augmentation"><option value="baseline">A0 · базовые</option><option value="rotate">A1 · + Rotate</option><option value="cutpaste">A2 · + CutPaste</option></select></label>
+<label>Классификатор<select id="classifier"><option value="logistic_regression">Logistic regression</option><option value="lightgbm">LightGBM</option></select></label>
+<label>Ранговая метрика<select id="rank"><option>RankMe</option><option>CER</option><option>CovER</option><option>NESum</option></select></label>
+<label>Признаки для ранга<select id="normalization"><option value="raw">Raw</option><option value="l2">L2</option></select></label>
+<label>Вертикальная шкала<select id="scale"><option value="minmax">0–1 · форма кривых</option><option value="native">Исходные значения</option></select></label>
+<label>Повторы<select id="seed"><option value="mean">Среднее трёх seed</option><option value="6101">Seed 6101</option><option value="6102">Seed 6102</option><option value="6103">Seed 6103</option></select></label>
+<label>Метрики качества<select id="metrics"><option value="primary">Precision / ROC-AUC</option><option value="additional">Average Precision / Recall</option></select></label>
+<label>Диапазон эпох<select id="window"><option value="full">Весь прогон · 0–100</option><option value="early">Начало · 0–10</option><option value="late">Продолжение · 30–100</option></select></label>
+</div>
+<p id="explanation" class="muted status" aria-live="polite"></p>
+<div class="toolbar"><div class="legend"><span><i></i>Качество · квадрат</span><span class="orange"><i></i>Ранг · круг</span></div><button id="save-svg" type="button">Скачать SVG</button><button id="save-png" type="button">Скачать PNG</button><span id="export-status" aria-live="polite"></span></div>
+<div id="figure" class="plot" role="img" aria-label="Динамика качества и ранговых метрик"></div>
+<p class="note">Совпадение формы линий не означает равенства величин или причинной связи. В режиме 0–1 каждая полная кривая нормирована отдельно; переключение диапазона эпох не меняет эту нормировку. Для оценки величины изменений используйте исходные значения.</p>
+<details open><summary>Исходные значения: эпохи 0, 30 и 100</summary><p id="table-note" class="muted"></p><div id="key-table" class="table-wrap"></div></details>
+<details><summary>Таблица всех десяти checkpoint</summary><div id="full-table" class="table-wrap"></div></details>
+</section>
+<section id="summary"><h2>Сводные результаты</h2>__SUMMARY_FIGURES__</section>
+<section id="method"><h2>Как читать результаты</h2>
+<div class="method-grid">
+<div class="card"><h3>Обучение и данные</h3><p>Оба энкодера обучены с нуля. Для каждой категории — отдельная модель. Матрица: 6 категорий × 2 архитектуры × 3 метода × 3 аугментации × 3 seed = 324 запуска. Каждый продолжался до 100 эпох; AdamW, постоянный lr=0.001, batch=64.</p><p>SSL получает весь train после выделения validation. Число изображений и естественная доля аномалий различаются между категориями. В отличие от пилота v1, здесь нет фиксированных долей 5% и 20% при размере train=240.</p><p>36 уникальных baseline эпохи 0: категория × архитектура × seed. Внутри каждой такой группы исходные веса одинаковы для всех методов и аугментаций. Повторяющиеся точки эпохи 0 не являются дополнительными независимыми наблюдениями.</p></div>
+<div class="card"><h3>Downstream-оценка</h3><p>На каждом checkpoint заморожены веса энкодера и заново обучены Logistic regression и LightGBM. Их гиперпараметры выбраны по validation Average Precision; порог — по максимальной validation precision при validation recall ≥ 0.5.</p><p>Основные линии показывают <strong>test</strong>-метрики. Ограничение recall относится к validation: test recall может оказаться ниже 0.5. Поэтому precision следует читать вместе с recall, AP и ROC-AUC. AP — Average Precision, а не трапецеидальная PR-AUC.</p><p>Классификаторы работают с raw-признаками. Переключатель Raw/L2 меняет только ранговую диагностику, а не обученный классификатор.</p></div>
+<div class="card"><h3>Четыре ранга и две шкалы</h3><p>Для матрицы признаков Z и её центрированного варианта Zc: RankMe — эффективный ранг сингулярных значений Z; CER — эффективный ранг сингулярных значений Zc; CovER — эффективный ранг собственных значений ковариации; NESum — сумма этих собственных значений, делённая на максимальное.</p><p>L2-нормировка применяется к строкам до центрирования. Метрики не делятся на размерность. ResNet даёт D=512, ViT — D=192; абсолютные ранги следует сравнивать внутри архитектуры, категории и split. В интерактивных графиках ранг рассчитан на test.</p><p>В исходной шкале левая ось — качество, правая — ранг; шкала ранга одинакова для трёх методов. Полоса показывает ± sample SD трёх seed, не доверительный интервал. В режиме 0–1 сначала считается средняя кривая, затем её min–max по всем десяти checkpoint; постоянная кривая отображается на уровне 0.5. Полосы в этом режиме не показаны.</p></div>
+<div class="card"><h3>Границы интерпретации</h3><p>Три seed характеризуют повтор полного протокола при фиксированном разбиении данных. Checkpoint одного обучения зависимы; категории и аугментации также нельзя считать независимыми копиями одного опыта. Выводы здесь описательные.</p><p>Основные заранее заданные сравнения: 100−0, 100−5, 100−10 и 100−30. Лучшая эпоха по test не выбиралась. Связь ранга и качества не устанавливает причинность и сама по себе не подтверждает правило выбора checkpoint без меток.</p><p>Masked reconstruction — адаптация с плотным изображением / всеми токенами, а не оригинальная MAE. У архитектур различаются декодеры. Rotate и CutPaste добавлены к базовым crop/jitter; CutPaste может менять признак дефекта, поэтому улучшение не предполагалось заранее.</p></div>
+</div>
+</section>
+<section id="data"><h2>Данные и проверка полноты</h2>__AUDIT__<h3>Данные и производные таблицы</h3><div class="downloads">__DOWNLOADS__</div><p class="muted">Использован итоговый накопленный снимок <code>reports/visa-v2-block4</code>. Предыдущие блоки — продолжения тех же обучений; их строки повторно не добавлялись.</p></section>
+<footer class="foot">VisA · visa-duration-v2 · автономный аналитический отчёт. Линии воспроизводят измеренные checkpoint без сглаживания и интерполяции дополнительных наблюдений.</footer>
+</main>
+<script id="report-data" type="application/json">__PAYLOAD__</script>
+<script>
+'use strict';
+const D=JSON.parse(document.getElementById('report-data').textContent);
+const IDS=['category','architecture','augmentation','classifier','rank','normalization','scale','seed','metrics','window'];
+const $=id=>document.getElementById(id);
+const METHODS=[['simclr','SimCLR'],['vicreg','VICReg'],['masked_reconstruction','Masked reconstruction']];
+const ML={precision_anomaly:'Precision аномалий',roc_auc:'ROC-AUC',average_precision:'Average Precision',recall_anomaly:'Recall аномалий'};
+const AL={resnet18:'ResNet-18',deit_tiny:'ViT-Tiny/16'};
+const AUG={baseline:'A0 · базовые',rotate:'A1 · + Rotate',cutpaste:'A2 · + CutPaste'};
+const CL={logistic_regression:'Logistic regression',lightgbm:'LightGBM'};
+const TEST_N={cashew:240,chewinggum:241,fryum:240,candle:440,capsules:281,pcb1:442};
+const BLACK='#252525',ORANGE='#ed8427';
+const xml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+const fixed=(v,n=3)=>Number.isFinite(v)?v.toFixed(n):'—';
+const short=v=>Math.abs(v)>=100?v.toFixed(0):Math.abs(v)>=10?v.toFixed(1):v.toFixed(2);
+function series(matrix,seed){
+ if(!matrix||matrix.length!==D.seeds.length)throw new Error('Неполная таблица выбранного условия.');
+ if(seed!=='mean'){const y=matrix[D.seeds.indexOf(Number(seed))];return{y:y.slice(),sd:y.map(()=>0)};}
+ const y=D.epochs.map((_,i)=>matrix.reduce((s,row)=>s+row[i],0)/matrix.length);
+ const sd=y.map((m,i)=>Math.sqrt(matrix.reduce((s,row)=>s+(row[i]-m)**2,0)/(matrix.length-1)));
+ return{y,sd};
+}
+function scaled(a){const lo=Math.min(...a.y),hi=Math.max(...a.y),span=hi-lo;return{y:a.y.map(v=>span<=1e-12?.5:(v-lo)/span),sd:a.sd.map(()=>0)};}
+function current(){return Object.fromEntries(IDS.map(id=>[id,$(id).value]));}
+function dataFor(s,method){
+ const q=D.q[[s.category,s.architecture,s.augmentation,method,s.classifier].join('|')];
+ const r=D.r[[s.category,s.architecture,s.augmentation,method,s.normalization].join('|')];
+ if(!q||!r)throw new Error('Данные выбранного условия отсутствуют.');
+ return{q,r};
+}
+function table(s,epochs){
+ let out='<table><thead><tr><th>Метод</th><th>Эпоха</th><th>Precision</th><th>ROC-AUC</th><th>AP</th><th>Recall</th><th>'+xml(s.rank)+' · '+xml(s.normalization)+'</th></tr></thead><tbody>';
+ for(const [method,label]of METHODS){const d=dataFor(s,method),all=['precision_anomaly','roc_auc','average_precision','recall_anomaly'].map(m=>series(d.q[m],s.seed));all.push(series(d.r[s.rank],s.seed));
+  for(const ep of epochs){const i=D.epochs.indexOf(ep);out+='<tr><td>'+xml(label)+'</td><td>'+ep+'</td>'+all.map((a,j)=>'<td>'+fixed(a.y[i],j===4?2:3)+(s.seed==='mean'?' ± '+fixed(a.sd[i],j===4?2:3):'')+'</td>').join('')+'</tr>';}}
+ return out+'</tbody></table>';
+}
+function render(){
+ const s=current(),metrics=s.metrics==='primary'?['precision_anomaly','roc_auc']:['average_precision','recall_anomaly'];
+ const native=s.scale==='native',withSD=native&&s.seed==='mean';
+ const bounds=s.window==='early'?[0,10]:s.window==='late'?[30,100]:[0,100];
+ const indices=D.epochs.map((ep,i)=>({ep,i})).filter(d=>d.ep>=bounds[0]&&d.ep<=bounds[1]).map(d=>d.i);
+ const ticks=s.window==='early'?[0,1,2,5,10]:s.window==='late'?[30,50,75,100]:[0,20,40,60,80,100];
+ const rows=METHODS.map(([method,label])=>{const d=dataFor(s,method);let r=series(d.r[s.rank],s.seed),q=metrics.map(m=>series(d.q[m],s.seed));if(!native){r=scaled(r);q=q.map(scaled);}return{method,label,r,q};});
+ let rlo=0,rhi=1,qlo=0,qhi=1;
+ if(native){
+  rlo=Math.min(...rows.flatMap(d=>d.r.y.map((v,i)=>v-(withSD?d.r.sd[i]:0))));
+  rhi=Math.max(...rows.flatMap(d=>d.r.y.map((v,i)=>v+(withSD?d.r.sd[i]:0))));
+  const pad=Math.max((rhi-rlo)*.07,Math.abs(rhi)*.015,1e-6);rlo=Math.max(0,rlo-pad);rhi+=pad;
+  qlo=Math.min(0,...rows.flatMap(d=>d.q.flatMap(a=>a.y.map((v,i)=>v-(withSD?a.sd[i]:0)))));
+  qhi=Math.max(1,...rows.flatMap(d=>d.q.flatMap(a=>a.y.map((v,i)=>v+(withSD?a.sd[i]:0)))));
+ }
+ const W=1200,H=1110,PW=420,PH=205,XS=[100,690],YS=[185,475,765];
+ const meta=[s.category,AL[s.architecture],AUG[s.augmentation],CL[s.classifier]].join('  ·  ');
+ const repetition=s.seed==='mean'?'среднее 3 seed'+(withSD?' ± sample SD':''):'seed '+s.seed;
+ const mode=native?'исходные значения':'каждая полная кривая → [0, 1]';
+ let svg='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="'+W+'" height="'+H+'" viewBox="0 0 '+W+' '+H+'" role="img" aria-labelledby="chart-title chart-desc"><title id="chart-title">VisA: качество и '+xml(s.rank)+'</title><desc id="chart-desc">'+xml(meta+'; '+repetition+'; '+mode+'; эпохи '+bounds.join('–'))+'</desc><rect width="1200" height="1110" fill="white"/><g font-family="DejaVu Sans,Arial,sans-serif" fill="'+BLACK+'">';
+ const text=(x,y,str,size=14,opts='')=>'<text x="'+x+'" y="'+y+'" font-size="'+size+'" '+opts+'>'+xml(str)+'</text>';
+ const line=(x1,y1,x2,y2,color,width=1,extra='')=>'<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+color+'" stroke-width="'+width+'" '+extra+'/>';
+ svg+=text(46,40,'VisA · качество и '+s.rank,23,'font-weight="600"')+text(46,70,meta,14)+text(46,94,repetition+'  ·  '+mode+'  ·  test N='+TEST_N[s.category]+', D='+(s.architecture==='resnet18'?512:192)+'  ·  rank '+s.normalization,13,'fill="#686961"');
+ svg+=line(46,119,77,119,BLACK,2.2)+'<rect x="58" y="115.5" width="7" height="7" fill="'+BLACK+'"/>'+text(87,124,'Качество',13)+line(225,119,256,119,ORANGE,2.2)+'<circle cx="240" cy="119" r="3.5" fill="'+ORANGE+'"/>'+text(266,124,s.rank,13,'fill="'+ORANGE+'"');
+ for(let row=0;row<3;row++)for(let col=0;col<2;col++){
+  const d=rows[row],x0=XS[col],y0=YS[row],q=d.q[col],r=d.r;
+  const X=ep=>x0+(ep-bounds[0])/(bounds[1]-bounds[0])*PW;
+  const YQ=v=>y0+PH-(v-qlo)/(qhi-qlo)*PH,YR=v=>y0+PH-(v-rlo)/(rhi-rlo)*PH;
+  svg+=text(x0,y0-21,d.label+' · '+ML[metrics[col]],16,'font-weight="600"');
+  for(let k=0;k<=4;k++){let f=k/4,yy=y0+PH-f*PH;svg+=line(x0,yy,x0+PW,yy,'#d8d8d8',.65)+text(x0-12,yy+4,short(qlo+f*(qhi-qlo)),11,'text-anchor="end"');if(native)svg+=text(x0+PW+12,yy+4,short(rlo+f*(rhi-rlo)),11,'fill="'+ORANGE+'"');}
+  for(const tick of ticks){const xx=X(tick);svg+=line(xx,y0,xx,y0+PH,'#e6e6e1',.65)+text(xx,y0+PH+21,tick,11,'text-anchor="middle"');}
+  svg+=line(x0,y0,x0,y0+PH,'#555',.8)+line(x0,y0+PH,x0+PW,y0+PH,'#555',.8);if(native)svg+=line(x0+PW,y0,x0+PW,y0+PH,ORANGE,.8);
+  svg+=text(x0+PW/2,y0+PH+43,'Эпоха',12,'text-anchor="middle"');
+  svg+=text(0,0,native?'Качество':'Нормированное значение',12,'transform="translate('+(x0-64)+' '+(y0+PH/2)+') rotate(-90)" text-anchor="middle"');
+  if(native)svg+=text(0,0,s.rank,12,'fill="'+ORANGE+'" transform="translate('+(x0+PW+67)+' '+(y0+PH/2)+') rotate(-90)" text-anchor="middle"');
+  const clip='clip-'+row+'-'+col;svg+='<defs><clipPath id="'+clip+'"><rect x="'+(x0-4)+'" y="'+(y0-4)+'" width="'+(PW+8)+'" height="'+(PH+8)+'"/></clipPath></defs><g clip-path="url(#'+clip+')">';
+  if(withSD){for(const [a,Y,color]of [[q,YQ,BLACK],[r,YR,ORANGE]]){const points=indices.map(i=>X(D.epochs[i])+','+Y(a.y[i]+a.sd[i])).concat(indices.slice().reverse().map(i=>X(D.epochs[i])+','+Y(a.y[i]-a.sd[i]))).join(' ');svg+='<polygon points="'+points+'" fill="'+color+'" fill-opacity="0.12"/>';}}
+  for(const [a,Y,color,kind]of [[q,YQ,BLACK,'square'],[r,YR,ORANGE,'circle']]){
+   svg+='<polyline points="'+indices.map(i=>X(D.epochs[i])+','+Y(a.y[i])).join(' ')+'" fill="none" stroke="'+color+'" stroke-width="2.1" stroke-linejoin="round"/>';
+   for(const i of indices){const xx=X(D.epochs[i]),yy=Y(a.y[i]),tip='<title>'+xml('Эпоха '+D.epochs[i]+': '+fixed(a.y[i],4)+(withSD?' ± '+fixed(a.sd[i],4):''))+'</title>';svg+=kind==='square'?'<rect x="'+(xx-3.3)+'" y="'+(yy-3.3)+'" width="6.6" height="6.6" fill="'+color+'">'+tip+'</rect>':'<circle cx="'+xx+'" cy="'+yy+'" r="3.4" fill="'+color+'">'+tip+'</circle>';}
+  }
+  svg+='</g>';
+ }
+ svg+=text(46,1044,'Измеренные checkpoint соединены прямыми отрезками; сглаживание не применяется.',12,'fill="#686961"');
+ svg+=text(46,1066,native?'Левая ось — качество; правая — ранг. Шкалы и диапазон ранга одинаковы для трёх методов.':'Min–max отдельно по каждой полной кривой: 10 checkpoint от 0 до 100; постоянная кривая = 0.5.',12,'fill="#686961"');
+ svg+=text(46,1088,withSD?'Полоса = ± sample SD трёх seed; это не доверительный интервал.':'Диапазон эпох меняет только видимую часть графика; шкала рассчитана по всем десяти checkpoint.',12,'fill="#686961"')+'</g></svg>';
+ $('figure').innerHTML=svg;
+ $('figure').setAttribute('aria-label',meta+'; '+repetition+'; '+mode);
+ $('explanation').textContent=meta+'. '+(s.seed==='mean'?'Три независимых SSL-seed: 6101, 6102, 6103. ':'Показан отдельный seed '+s.seed+'. ')+'Доля аномалий в SSL-train: '+(100*D.fractions[s.category]).toFixed(2)+'%. '+(native?(withSD?'Полосы — ± sample SD. ':'')+'Качество слева, '+s.rank+' справа.':'Каждая полная кривая нормирована отдельно; полосы SD скрыты.');
+ $('table-note').textContent=(s.seed==='mean'?'Среднее ± sample SD трёх seed.':'Значения отдельного seed '+s.seed+'.')+' Исходные test-значения; таблицы не зависят от выбранной шкалы или диапазона эпох.';
+ $('key-table').innerHTML=table(s,[0,30,100]);$('full-table').innerHTML=table(s,D.epochs);
+ $('export-status').textContent='';
+}
+function svgSource(){return '<?xml version="1.0" encoding="UTF-8"?>\n'+new XMLSerializer().serializeToString($('figure').querySelector('svg'));}
+function filename(ext){const s=current();return['VisA_v2',s.category,s.architecture,s.augmentation,s.classifier,s.rank,s.normalization,s.scale,s.seed,s.window,s.metrics].join('_')+'.'+ext;}
+function download(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),15000);}
+$('save-svg').addEventListener('click',()=>{download(new Blob([svgSource()],{type:'image/svg+xml;charset=utf-8'}),filename('svg'));$('export-status').textContent='SVG подготовлен.';});
+$('save-png').addEventListener('click',()=>{
+ const button=$('save-png');button.disabled=true;$('export-status').textContent='Подготовка PNG…';
+ const blob=new Blob([svgSource()],{type:'image/svg+xml;charset=utf-8'}),u=URL.createObjectURL(blob),img=new Image();
+ const finish=()=>{button.disabled=false;URL.revokeObjectURL(u);};
+ img.onload=()=>{try{const c=document.createElement('canvas');c.width=2400;c.height=2220;const ctx=c.getContext('2d');ctx.fillStyle='white';ctx.fillRect(0,0,c.width,c.height);ctx.drawImage(img,0,0,c.width,c.height);c.toBlob(b=>{if(b){download(b,filename('png'));$('export-status').textContent='PNG 2400 × 2220 подготовлен.';}else $('export-status').textContent='Не удалось создать PNG; используйте SVG.';finish();},'image/png');}catch(e){$('export-status').textContent='Не удалось создать PNG; используйте SVG.';finish();}};
+ img.onerror=()=>{$('export-status').textContent='Не удалось создать PNG; используйте SVG.';finish();};img.src=u;
+});
+IDS.forEach(id=>$(id).addEventListener('change',()=>{try{render();}catch(e){$('explanation').textContent=e.message;}}));
+try{render();}catch(e){$('explanation').textContent='Ошибка загрузки встроенных данных: '+e.message;}
+</script>
+</body></html>
